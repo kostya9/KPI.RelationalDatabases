@@ -1,16 +1,5 @@
 import _pickle as pickle
-
-class ForeignKey():
-    def __init__(self, name_fk_entity, name_fk, name_entity):
-        self.name_fk_entity = name_fk_entity
-        self.name_fk = name_fk
-        self.name_entity = name_entity
-
-    def get_fk_value(self, obj):
-        return getattr(obj, self.name_fk)
-
-    def has_fk_value(self, obj):
-        return hasattr(obj, self.name_fk)
+from Data.foreignkey import ForeignKey
 
 class DataHolder():
     def __init__(self):
@@ -44,6 +33,8 @@ class DataHolder():
 
     def add(self, name, obj):
         self.__validate_object(name, obj)
+        maxId = max(self.data[name], key=lambda x: x.id, default=0)
+        obj.id = (0 if maxId == 0 else maxId.id) + 1
         self.data[name].append(obj)
 
     def get_all(self, name):
@@ -60,6 +51,9 @@ class DataHolder():
         for idx, item in enumerate(self.data[name]):
             if item.id == id:
                 return idx, item
+
+    def exists(self, name, id):
+        return self.get(name, id) is not None
 
     def get(self, name, id):
         try:

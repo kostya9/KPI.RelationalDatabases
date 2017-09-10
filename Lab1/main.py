@@ -1,4 +1,4 @@
-from dataholder import DataHolder
+from Data.dataholder import DataHolder
 from city import City
 from country import Country
 
@@ -32,6 +32,7 @@ def __main():
 
     input_command = ""
     while input_command != 'exit':
+        print(">", end=' ')
         input_command = input()
         words = input_command.split(' ')
         arg = None
@@ -59,13 +60,51 @@ def __print_cities():
         country_name = data.get(COUNTRY_KEY, city.country_id).name
         print("%i\t%s\t%s\t%i" % (city.id, country_name, city.name, city.population))
 
+def __add_country():
+    print('Please, enter the country name:')
+    name = input()
+    country = Country(0, name)
+    data.add(COUNTRY_KEY, country)
+    print('Added with id %i' % country.id)
+
+def __add_city():
+    while True:
+        print('Please, enter the country id:')
+        id = input()
+        try:
+            id = int(id)
+        except ValueError:
+            print('The value is not integer')
+            continue
+        if not data.exists(COUNTRY_KEY, id):
+            print('Country with this id does not exist')
+            continue
+        break
+
+    print('Please, enter the city name:')
+    name = input()
+
+    while True:
+        print('Please, enter the population')
+        population = input()
+        try:
+            population = int(population)
+        except ValueError:
+            print('The population is not integer')
+            continue
+        break
+    city = City(0, id, name, population)
+    data.add(CITY_KEY, city)
+    print('Added with id %i' % city.id)
+
+
 def __create_commands():
     commands = {
         'help': lambda: print(HELP),
         'list_countries': __print_countries,
         'list_cities': __print_cities,
-        'add_city': lambda: data.add(CITY_KEY, City(0, 0, "all", 123)),
-        'add_country': lambda: data.add(COUNTRY_KEY, Country(0, "Name")),
+        'add_city': __add_city,
+        'add_country': __add_country,
         'exit': lambda: None
     }
     return commands
