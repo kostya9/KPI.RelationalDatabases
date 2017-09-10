@@ -1,4 +1,5 @@
 import _pickle as pickle
+import os
 from Data.foreignkey import ForeignKey
 
 class DataHolder():
@@ -11,8 +12,11 @@ class DataHolder():
             pickle.dump(self.data, file)
 
     def deserialize(self, fileName):
-        with open(fileName, 'rb') as file:
-            self.data = pickle.load(file)
+        if os.path.exists(fileName):
+            with open(fileName, 'rb') as file:
+                self.data = pickle.load(file)
+        else:
+            raise ValueError('File does not exist')
 
     def __validate_object(self, name, obj):
         if name not in self.data:
@@ -43,6 +47,12 @@ class DataHolder():
 
         return self.data[name][:]
 
+    def is_key_for_foreignkey(self, name):
+        for fk in self.foreign_keys:
+            if fk.name_entity == name:
+                return True
+
+        return False
 
     def __find_by_id(self, name, id):
         if name not in self.data:

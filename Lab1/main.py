@@ -1,7 +1,10 @@
-from Data.dataholder import DataHolder
+"""
+Entry point for Lab1 with CLI.
+"""
+
 from city import City
 from country import Country
-
+from Data.dataholder import DataHolder
 
 # Text commands' content
 HELP = " \
@@ -46,14 +49,14 @@ def __main():
         command = '_'.join(words)
         if command not in commands:
             print(ERROR)
-            continue;
+            continue
 
         try:
             if arg is not None:
                 commands[command](arg)
             else:
                 commands[command]()
-        except Exception as e:
+        except TypeError:
             print(ERROR)
 
 def __print_countries():
@@ -73,6 +76,25 @@ def __print_cities():
         country_name = data.get(COUNTRY_KEY, city.country_id).name
         print("%i\t%s\t%s\t%i" % (city.id, country_name, city.name, city.population))
 
+def __validate_parse_integer(string):
+    try:
+        value = int(string)
+    except ValueError:
+        print('The value is not integer')
+        return None
+    return value
+
+def __validate_parse_id(data_key, string):
+    data_id = __validate_parse_integer(string)
+    if data_id is None:
+        return
+
+    if not data.exists(data_key, data_id):
+        print('The object does not exist')
+        return None
+
+    return data_id
+
 def __add_country():
     print('Please, enter the country name:')
     name = input()
@@ -81,35 +103,46 @@ def __add_country():
     print('Added with id %i' % country.id)
 
 def __add_city():
-    while True:
-        print('Please, enter the country id:')
-        id = input()
-        try:
-            id = int(id)
-        except ValueError:
-            print('The value is not integer')
-            continue
-        if not data.exists(COUNTRY_KEY, id):
-            print('Country with this id does not exist')
-            continue
-        break
+    print('Please, enter the country id:')
+    country_id = __validate_parse_id(COUNTRY_KEY, input())
+    if country_id is None:
+        return
 
     print('Please, enter the city name:')
     name = input()
 
-    while True:
-        print('Please, enter the population')
-        population = input()
-        try:
-            population = int(population)
-        except ValueError:
-            print('The population is not integer')
-            continue
-        break
-    city = City(0, id, name, population)
+    print('Please, enter the population')
+    population = __validate_parse_integer(input())
+    if population is None:
+        return
+
+    city = City(0, country_id, name, population)
     data.add(CITY_KEY, city)
     print('Added with id %i' % city.id)
 
+def __deserialize():
+    try:
+        data.deserialize(SAVE_FILE_NAME)
+    except ValueError:
+        print('The save file \'data.p\' does not exist')
+
+def __remove_entity(key, data_id):
+    data_id = __validate_parse_integer(data_id)
+    if data_id is None:
+        return
+    if not data.exists(key, data_id):
+        print('The object does not exist')
+        return
+    if data.is_key_for_foreignkey(key):
+        print('Some objects may depend on this one. Are you sure that you want to delete it?')
+        print('Note that all connected entities will be removed too.')
+        print('Print \'y\' if you want to delete it anyways')
+        if input().lower() not in ['y', 'yes']:
+            print('Aborting...')
+            return
+
+    data.remove(key, data_id)
+    print('The entity is successfully removed')
 
 def __create_commands():
     commands = {
@@ -118,8 +151,10 @@ def __create_commands():
         'list_cities': __print_cities,
         'add_city': __add_city,
         'add_country': __add_country,
+        'remove_country': lambda id: __remove_entity(COUNTRY_KEY, id),
+        'remove_city': lambda id: __remove_entity(CITY_KEY, id),
         'save': lambda: data.serialize(SAVE_FILE_NAME),
-        'load': lambda: data.deserialize(SAVE_FILE_NAME), 
+        'load': __deserialize,
         'exit': lambda: None
     }
     return commands
