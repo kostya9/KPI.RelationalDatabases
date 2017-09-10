@@ -15,6 +15,8 @@ HELP = " \
         edit country {id} - to edit the country with id {id} \n\
         remove country {id} - to remove the country with id {id} \n\
         remove country {id} - to remove the country with id {id} \n\
+        save \n\
+        load \n\
         exit \
     "
 ERROR = 'Sorry, this command does not exist'
@@ -23,6 +25,7 @@ ERROR = 'Sorry, this command does not exist'
 data = DataHolder()
 COUNTRY_KEY = 'country'
 CITY_KEY = 'city'
+SAVE_FILE_NAME = 'data.p'
 
 def __main():
     commands = __create_commands()
@@ -45,17 +48,27 @@ def __main():
             print(ERROR)
             continue;
 
-        commands[command]()
+        try:
+            if arg is not None:
+                commands[command](arg)
+            else:
+                commands[command]()
+        except Exception as e:
+            print(ERROR)
 
 def __print_countries():
     countries = data.get_all(COUNTRY_KEY)
     print('Id, Name')
+    if not countries:
+        print('...There is nothing here...')
     for country in countries:
         print("%i\t%s" % (country.id, country.name))
 
 def __print_cities():
     cities = data.get_all(CITY_KEY)
     print('Id, Country, Name, Population')
+    if not cities:
+        print('...There is nothing here...')
     for city in cities:
         country_name = data.get(COUNTRY_KEY, city.country_id).name
         print("%i\t%s\t%s\t%i" % (city.id, country_name, city.name, city.population))
@@ -105,6 +118,8 @@ def __create_commands():
         'list_cities': __print_cities,
         'add_city': __add_city,
         'add_country': __add_country,
+        'save': lambda: data.serialize(SAVE_FILE_NAME),
+        'load': lambda: data.deserialize(SAVE_FILE_NAME), 
         'exit': lambda: None
     }
     return commands
