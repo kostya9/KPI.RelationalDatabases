@@ -1,6 +1,7 @@
 """
 Entry point for Lab1 with CLI.
 """
+import signal, sys
 
 from city import City
 from country import Country
@@ -30,12 +31,24 @@ COUNTRY_KEY = 'country'
 CITY_KEY = 'city'
 SAVE_FILE_NAME = 'data.p'
 
+def __sigint_handler(signum, frame):
+    sys.exit(0)
+
+
 def __main():
+    # Windows 10 does not close python proccess after Ctrl-C for some reason
+    signal.signal(signal.SIGINT, __sigint_handler)
     commands = __create_commands()
     print(HELP)
 
     data.make_foreign_key(CITY_KEY, 'country_id', COUNTRY_KEY)
+    try:
+        __input_loop(commands)
+    except (KeyboardInterrupt,  EOFError):
+        SystemExit(0)
 
+
+def __input_loop(commands):
     input_command = ""
     while input_command != 'exit':
         print(">", end=' ')
@@ -76,16 +89,19 @@ def __print_cities():
         country_name = data.get(COUNTRY_KEY, city.country_id).name
         print("%i\t%s\t%s\t%i" % (city.id, country_name, city.name, city.population))
 
-def __validate_parse_integer(string):
+def __validate_parse_positive_integer(string):
     try:
         value = int(string)
     except ValueError:
         print('The value is not integer')
         return None
+    if value < 0:
+        print('The value is negative')
+        return None
     return value
 
 def __validate_parse_id(data_key, string):
-    data_id = __validate_parse_integer(string)
+    data_id = __validate_parse_positive_integer(string)
     if data_id is None:
         return
 
@@ -112,7 +128,7 @@ def __add_city():
     name = input()
 
     print('Please, enter the population')
-    population = __validate_parse_integer(input())
+    population = __validate_parse_positive_integer(input())
     if population is None:
         return
 
@@ -127,7 +143,7 @@ def __deserialize():
         print('The save file \'data.p\' does not exist')
 
 def __remove_entity(key, data_id):
-    data_id = __validate_parse_integer(data_id)
+    data_id = __validate_parse_positive_integer(data_id)
     if data_id is None:
         return
     if not data.exists(key, data_id):
@@ -144,6 +160,46 @@ def __remove_entity(key, data_id):
     data.remove(key, data_id)
     print('The entity is successfully removed')
 
+def __edit_country(country_id):
+    country_id = __validate_parse_id(COUNTRY_KEY, country_id)
+    if country_id is None:
+        return
+
+    country = data.get(COUNTRY_KEY, country_id)
+    print('Type in the new name of the country[default=%s]:' % country.name)
+    name = input()
+    country.name = name or country.name
+    print('The country was successfully changed')
+
+def __edit_city(city_id):
+    city_id = __validate_parse_id(CITY_KEY, city_id)
+    if city_id is None:
+        print('Aborting...')
+        return
+
+    city = data.get(CITY_KEY, city_id)
+    print('Type in the new country id[default=%i]:' % city.country_id)
+    country_id = input() or city.country_id
+    country_id = __validate_parse_id(COUNTRY_KEY, country_id)
+    if country_id is None:
+        print('Aborting...')
+        return
+
+    print('Type in the new name of the city[default=%s]:' % city.name)
+    name = input() or city.name
+
+    print('Type in the new population[default=%i]:' % city.population)
+    population = __validate_parse_positive_integer(input())
+    if population is None:
+        print('Aborting...')
+        return
+
+    city.country_id = country_id
+    city.name = name
+    city.population = population
+    print('The city was changed successfully')
+
+
 def __create_commands():
     commands = {
         'help': lambda: print(HELP),
@@ -151,6 +207,8 @@ def __create_commands():
         'list_cities': __print_cities,
         'add_city': __add_city,
         'add_country': __add_country,
+        'edit_country': __edit_country,
+        'edit_city': __edit_city,
         'remove_country': lambda id: __remove_entity(COUNTRY_KEY, id),
         'remove_city': lambda id: __remove_entity(CITY_KEY, id),
         'save': lambda: data.serialize(SAVE_FILE_NAME),

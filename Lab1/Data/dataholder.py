@@ -25,14 +25,14 @@ class DataHolder():
         if not hasattr(obj, 'id'):
             raise ValueError('No id field')
 
-        for fk in self.foreign_keys:
-            if fk.name_fk_entity == name:
-                if not fk.has_fk_value(obj):
-                    raise ValueError('No FK field')
-                id = fk.get_fk_value(obj)
-                connected_entity = self.get(fk.name_entity, id)
-                if connected_entity is None:
-                    raise ValueError('FK validation failed. The entity %s with id %i does not exist.' %(fk.name_entity, id))
+        connected_keys = [fk for fk in self.foreign_keys if fk.name_fk_entity == name]
+        for fk in connected_keys:
+            if not fk.has_fk_value(obj):
+                raise ValueError('No FK field')
+            id = fk.get_fk_value(obj)
+            connected_entity = self.get(fk.name_entity, id)
+            if connected_entity is None:
+                raise ValueError('FK validation failed. The entity %s with id %i does not exist.' %(fk.name_entity, id))
 
 
     def add(self, name, obj):
