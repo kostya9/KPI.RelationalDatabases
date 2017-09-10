@@ -23,7 +23,7 @@ HELP = " \
         load \n\
         exit \
     "
-ERROR = 'Sorry, this command does not exist'
+ERROR = 'This command does not exist. Try help'
 
 # Data initialisation
 data = DataHolder()
@@ -61,7 +61,7 @@ def __input_loop(commands):
 
         command = '_'.join(words)
         if command not in commands:
-            print(ERROR)
+            __error(ERROR)
             continue
 
         try:
@@ -70,7 +70,10 @@ def __input_loop(commands):
             else:
                 commands[command]()
         except TypeError:
-            print(ERROR)
+            __error(ERROR)
+
+def __error(message):
+    print('ERROR: %s' % message)
 
 def __print_countries():
     countries = data.get_all(COUNTRY_KEY)
@@ -93,10 +96,10 @@ def __validate_parse_positive_integer(string):
     try:
         value = int(string)
     except ValueError:
-        print('The value is not integer')
+        __error('The value is not integer')
         return None
     if value < 0:
-        print('The value is negative')
+        __error('The value is negative')
         return None
     return value
 
@@ -106,7 +109,7 @@ def __validate_parse_id(data_key, string):
         return
 
     if not data.exists(data_key, data_id):
-        print('The object does not exist')
+        __error('The object does not exist')
         return None
 
     return data_id
@@ -140,14 +143,14 @@ def __deserialize():
     try:
         data.deserialize(SAVE_FILE_NAME)
     except ValueError:
-        print('The save file \'data.p\' does not exist')
+        __error('The save file \'data.p\' does not exist')
 
 def __remove_entity(key, data_id):
     data_id = __validate_parse_positive_integer(data_id)
     if data_id is None:
         return
     if not data.exists(key, data_id):
-        print('The object does not exist')
+        __error('The object does not exist')
         return
     if data.is_key_for_foreignkey(key):
         print('Some objects may depend on this one. Are you sure that you want to delete it?')
