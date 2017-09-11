@@ -1,10 +1,14 @@
+import itertools
 from city import City
 from country import Country
 from Data.dataholder import DataHolder
 
 class Commands():
     """
-    Is responsible for running commands with input and ouput
+    Is responsible for running commands with input and ouput.
+    See 'help' command for extra details. Note that spaces in help commands should be
+    changed to underscores. The argument in the {} parenthesese should be given
+    in the 'arg' parameter
     """
     def __init__(self, data: DataHolder):
         self.__data = data
@@ -37,7 +41,7 @@ class Commands():
             'help': lambda: print(self.__help_message),
             'list_countries': self.__print_countries,
             'list_cities': self.__print_cities,
-            'list_largecountries': lambda: None,
+            'list_largecountries': self.__print_large_countries,
             'add_city': self.__add_city,
             'add_country': self.__add_country,
             'edit_country': self.__edit_country,
@@ -57,7 +61,7 @@ class Commands():
         """
         Runs the command.
         Args:
-            command_name (str): the name for the command to be ran.
+            command_name (str): the name for the command to be run.
             arg (any): the argument for the command. None if the command has no arguments.
         """
         try:
@@ -197,14 +201,18 @@ class Commands():
         city.name = name
         city.population = population
         print('The city was changed successfully')
-    """
-    def __print_large_countries():
-        countries = data.get_all(COUNTRY_KEY)
-        cities = data.get_all(CITY_KEY)
 
+    def __print_large_countries(self):
+        cities = self.__data.get_all(self.__city_key)
         borderline_population = pow(10, 6)
-        sorted_cities = sort(cities, lambda c: c.country_id)
-        country_with_cities_mil_population = lambda country, cities: cities.__len__ > 3 and all(cities, lambda city: city.population > borderline_population)
-        filtered_countries = [country for country in countries for city in cities if city.country_id == country.id]
-        __print_countries_collection(filtered_countries)
-        """
+
+        # Itertools groupby requires sorted grouping key
+        sorted_cities = sorted(cities, key=lambda c: c.country_id)
+        citied_by_country = itertools.groupby(sorted_cities, lambda c: c.country_id)
+        filtered_countries = []
+        for country_id, cities in citied_by_country:
+            big_cities = sum([1 if c.population > borderline_population else 0 for c in cities])
+            if big_cities >= 3:
+                filtered_countries.append(self.__data.get(self.__country_key, country_id))
+        self.__print_countries_collection(filtered_countries)
+        
