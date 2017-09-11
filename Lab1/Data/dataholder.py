@@ -1,19 +1,28 @@
-import _pickle as pickle
 import os
+import _pickle as pickle
 from Data.foreignkey import ForeignKey
 
 class DataHolder():
+    """
+    Represents data and its' relationships
+    """
     def __init__(self):
         self.data = {}
         self.foreign_keys = []
 
-    def serialize(self, fileName):
-        with open(fileName, 'wb') as file:
+    def serialize(self, file_name: str):
+        """
+        Serializes the state of the data with relationships in the file
+        """
+        with open(file_name, 'wb') as file:
             pickle.dump(self.data, file)
 
-    def deserialize(self, fileName):
-        if os.path.exists(fileName):
-            with open(fileName, 'rb') as file:
+    def deserialize(self, file_name: str):
+        """
+        Deserializes the state of the data with relationships from the file
+        """
+        if os.path.exists(file_name):
+            with open(file_name, 'rb') as file:
                 self.data = pickle.load(file)
         else:
             raise ValueError('File does not exist')
@@ -25,67 +34,94 @@ class DataHolder():
         if not hasattr(obj, 'id'):
             raise ValueError('No id field')
 
-        connected_keys = [fk for fk in self.foreign_keys if fk.name_fk_entity == name]
-        for fk in connected_keys:
-            if not fk.has_fk_value(obj):
+        connected_keys = [foreign_key for foreign_key in self.foreign_keys
+                          if foreign_key.name_fk_entity == name]
+        for foreign_key in connected_keys:
+            if not foreign_key.has_fk_value(obj):
                 raise ValueError('No FK field')
-            id = fk.get_fk_value(obj)
-            connected_entity = self.get(fk.name_entity, id)
+            fk_id = foreign_key.get_fk_value(obj)
+            connected_entity = self.get(foreign_key.name_entity, fk_id)
             if connected_entity is None:
-                raise ValueError('FK validation failed. The entity %s with id %i does not exist.' %(fk.name_entity, id))
+                raise ValueError('FK validation failed. The entity %s with id %i does not exist.'
+                                 % (foreign_key.name_entity, fk_id))
 
 
-    def add(self, name, obj):
+    def add(self, name: str, obj):
+        """
+        Adds an object to collection
+        """
         self.__validate_object(name, obj)
-        maxId = max(self.data[name], key=lambda x: x.id, default=0)
-        obj.id = (0 if maxId == 0 else maxId.id) + 1
+        max_id = max(self.data[name], key=lambda x: x.id, default=0)
+        obj.id = (0 if max_id == 0 else max_id.id) + 1
         self.data[name].append(obj)
 
-    def get_all(self, name):
+    def get_all(self, name: str):
+        """
+        Returns all objects from collection
+        """
         if name not in self.data:
             return []
 
         return self.data[name][:]
 
     def is_key_for_foreignkey(self, name):
-        for fk in self.foreign_keys:
-            if fk.name_entity == name:
+        """
+        Checks if there is an associated foreign key for this collection
+        """
+        for foreign_key in self.foreign_keys:
+            if foreign_key.name_entity == name:
                 return True
 
         return False
 
-    def __find_by_id(self, name, id):
+    def __find_by_id(self, name, entity_id):
         if name not in self.data:
             return None, None
 
         for idx, item in enumerate(self.data[name]):
-            if item.id == id:
+            if item.id == entity_id:
                 return idx, item
 
-    def exists(self, name, id):
-        return self.get(name, id) is not None
+    def exists(self, name, entity_id):
+        """
+        Checks if an entity with this id in this collection exists
+        """
+        return self.get(name, entity_id) is not None
 
-    def get(self, name, id):
+    def get(self, name, entity_id):
+        """
+        Returns entity wi th this id from this collection
+        """
         try:
-            idx, item = self.__find_by_id(name, id)
+            _, item = self.__find_by_id(name, entity_id)
         except TypeError:
-                    return;
+            return
         return item
 
-    def remove(self, name, id):
+    def remove(self, name, entity_id):
+        """
+        Removes the entity with this id from this collection
+        """
         try:
-            idx, item = self.__find_by_id(name, id)
+            idx, _ = self.__find_by_id(name, entity_id)
         except TypeError:
-            return;
+            return
 
         self.data[name].pop(idx)
 
-        for (fk, fk_entity) in  [(fk, fk_entity) 
-            for fk in self.foreign_keys if fk.name_entity == name
-            for fk_entity in self.data[fk.name_fk_entity] if fk.get_fk_value(fk_entity) == id]:
-            self.remove(fk.name_fk_entity, fk_entity.id)
+        # Cascade delete connected entities
+        for (foreign_key, fk_entity) in \
+                [(foreign_key, fk_entity)
+                 for foreign_key in self.foreign_keys
+                 if foreign_key.name_entity == name
+                 for fk_entity in self.data[foreign_key.name_fk_entity]
+                 if foreign_key.get_fk_value(fk_entity) == entity_id]:
+            self.remove(foreign_key.name_fk_entity, fk_entity.id)
 
-    def make_foreign_key(self, name_fk_entity, name_fk, name_entity):
+    def make_foreign_key(self, name_fk_entity: str, name_fk: str, name_entity: str):
+        """
+        Create a foreign key [name_fk] defined on the [name_fk_entity] referring to [name_entity]
+        """
         if name_fk_entity not in self.data:
             self.data[name_fk_entity] = []
 
@@ -99,4 +135,3 @@ class DataHolder():
         except ValueError:
             self.foreign_keys.pop()
             raise ValueError('Cannot add FK on the field. Not all objects can be validated')
-
