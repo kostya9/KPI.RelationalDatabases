@@ -2,7 +2,7 @@ import os
 import _pickle as pickle
 from Data.foreignkey import ForeignKey
 
-class DataHolder():
+class DataRepository():
     """
     Represents data and its' relationships
     """

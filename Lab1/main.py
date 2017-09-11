@@ -5,7 +5,7 @@ import signal, sys
 import itertools
 
 from commands import Commands
-from Data.dataholder import DataHolder
+from Data.datarepository import DataRepository
 
 def __sigint_handler(signum, frame):
     sys.exit(0)
@@ -13,7 +13,7 @@ def __sigint_handler(signum, frame):
 def __main():
     # Windows 10 does not close python proccess after Ctrl-C for some reason
     signal.signal(signal.SIGINT, __sigint_handler)
-    data = DataHolder()
+    data = DataRepository()
     commands = Commands(data)
     commands.run('help')
 

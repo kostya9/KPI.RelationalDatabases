@@ -1,7 +1,7 @@
 import itertools
 from city import City
 from country import Country
-from Data.dataholder import DataHolder
+from Data.datarepository import DataRepository
 
 class Commands():
     """
@@ -10,7 +10,7 @@ class Commands():
     changed to underscores. The argument in the {} parenthesese should be given
     in the 'arg' parameter
     """
-    def __init__(self, data: DataHolder):
+    def __init__(self, data: DataRepository):
         self.__data = data
         self.__city_key = 'city'
         self.__country_key = 'country'
