@@ -15,7 +15,7 @@ class DataHolder():
         Serializes the state of the data with relationships in the file
         """
         with open(file_name, 'wb') as file:
-            pickle.dump(self.data, file)
+            pickle.dump({'data': self.data, 'foreign_keys': self.foreign_keys}, file)
 
     def deserialize(self, file_name: str):
         """
@@ -23,7 +23,9 @@ class DataHolder():
         """
         if os.path.exists(file_name):
             with open(file_name, 'rb') as file:
-                self.data = pickle.load(file)
+                dump = pickle.load(file)
+                self.data = dump['data']
+                self.foreign_keys = dump['foreign_keys']
         else:
             raise ValueError('File does not exist')
 
@@ -64,7 +66,7 @@ class DataHolder():
 
         return self.data[name][:]
 
-    def is_key_for_foreignkey(self, name):
+    def is_key_for_foreignkey(self, name: str):
         """
         Checks if there is an associated foreign key for this collection
         """
@@ -74,7 +76,7 @@ class DataHolder():
 
         return False
 
-    def __find_by_id(self, name, entity_id):
+    def __find_by_id(self, name: str, entity_id: int):
         if name not in self.data:
             return None, None
 
@@ -82,13 +84,13 @@ class DataHolder():
             if item.id == entity_id:
                 return idx, item
 
-    def exists(self, name, entity_id):
+    def exists(self, name: str, entity_id: int):
         """
         Checks if an entity with this id in this collection exists
         """
         return self.get(name, entity_id) is not None
 
-    def get(self, name, entity_id):
+    def get(self, name: str, entity_id: int):
         """
         Returns entity wi th this id from this collection
         """
@@ -98,7 +100,7 @@ class DataHolder():
             return
         return item
 
-    def remove(self, name, entity_id):
+    def remove(self, name: str, entity_id: int):
         """
         Removes the entity with this id from this collection
         """
