@@ -1,6 +1,6 @@
 import itertools
-from city import City
-from country import Country
+from Model.city import City
+from Model.country import Country
 from Data.datarepository import DataRepository
 
 class Commands():
@@ -34,7 +34,7 @@ class Commands():
         "
         self.__error_message = 'This command does not exist. Try help'
 
-        self.commands = self.__create_commands()
+        self.__commands = self.__create_commands()
 
     def __create_commands(self):
         commands = {
@@ -66,9 +66,9 @@ class Commands():
         """
         try:
             if arg is None:
-                self.commands[command_name]()
+                self.__commands[command_name]()
             else:
-                self.commands[command_name](arg)
+                self.__commands[command_name](arg)
         except (KeyError, TypeError):
             self.__error(self.__error_message)
 
@@ -208,6 +208,8 @@ class Commands():
 
         # Itertools groupby requires sorted grouping key
         sorted_cities = sorted(cities, key=lambda c: c.country_id)
+
+
         citied_by_country = itertools.groupby(sorted_cities, lambda c: c.country_id)
         filtered_countries = []
         for country_id, cities in citied_by_country:

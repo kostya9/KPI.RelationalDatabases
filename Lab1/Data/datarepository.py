@@ -78,7 +78,7 @@ class DataRepository():
 
     def __find_by_id(self, name: str, entity_id: int):
         if name not in self.data:
-            return None, None
+            return None
 
         for idx, item in enumerate(self.data[name]):
             if item.id == entity_id:
