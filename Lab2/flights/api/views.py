@@ -1,9 +1,14 @@
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 from django.shortcuts import render
 from django.http import HttpResponse, HttpRequest, JsonResponse
 from api.repositories.pilots import Pilots
 import MySQLdb
 from api.models import Encoder, Pilot
 import json
+
+import datetime
+
 
 def connect():
     return MySQLdb.connect(host="localhost",
@@ -15,6 +20,7 @@ def index(request: HttpRequest):
     if request.method == 'GET':
         return JsonResponse({'text': '123'})
 
+@method_decorator(csrf_exempt, name='dispatch')
 def pilots(request: HttpRequest):
     if request.method == 'GET':
         with connect() as connection:
@@ -27,13 +33,32 @@ def pilots(request: HttpRequest):
         try:
             firstname = pilot["firstname"]
             lastname = pilot["lastname"]
-            start_date = pilot["starting_date"]
+            start_date = pilot["startdate"]
+            start_date = datetime.datetime.strptime(start_date, "%Y-%m-%dT%H:%M:%S.%fZ")
             pilot = Pilot(0, firstname, lastname, start_date)
-        except TypeError:
+        except TypeError as e:
+            print(e)
             return HttpResponse(status=400)
         with connect() as connection:
             repository = Pilots(connection)
             repository.add(pilot)
+        return HttpResponse(status=200)
+
+def pilots_search(request: HttpRequest):
+    if request.method == 'GET':
+        with connect() as connection:
+            repository = Pilots(connection)
+            firstname = request.GET.get('firstname')
+            lastname = request.GET.get('lastname')
+            pilots = repository.search(firstname, lastname)
+        return JsonResponse(pilots, safe=False, encoder=Encoder)
+
+@method_decorator(csrf_exempt, name='dispatch')
+def pilots_remove(request: HttpRequest, id):
+    if request.method == 'DELETE':
+        with connect() as connection:
+            repository = Pilots(connection)
+            repository.remove(id)
         return HttpResponse(status=200)
 
 
