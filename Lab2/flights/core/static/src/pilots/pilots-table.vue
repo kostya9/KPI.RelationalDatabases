@@ -24,11 +24,6 @@
         return {
         }
     },
-    filters: {
-        date(date) {
-            return date.toLocaleDateString();
-        }
-    },
     methods: {
         remove(id) {
             this.$emit('remove', id)

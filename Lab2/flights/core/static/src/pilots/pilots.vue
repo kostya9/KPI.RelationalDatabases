@@ -1,6 +1,5 @@
-
-
 <template>
+<span>
     <section class="container ids">
         <nav class="level is-centered controls" v-on:keyup.13="search()">
             <div class="level-left">
@@ -30,47 +29,49 @@
             </div>
         </nav>
         <pilots-table @remove="remove" class="is-centered" :pilots="pilots"></pilots-table>
-        <add-pilot-modal v-if="addPilotModalActive" @cancel="cancel()" @ok="ok"></add-pilot-modal>
     </section>
+    <add-pilot-modal v-if="addPilotModalActive" @cancel="cancel()" @ok="ok"></add-pilot-modal>
+</span>
 </template>
 
 <script>
 import LevelControl from './../shared/level-control.vue'
 import PilotsTable from './pilots-table.vue'
 import AddPilotModal from './add-pilot-modal.vue'
+import axios from 'axios';
+
 export default {
     components: {LevelControl, PilotsTable, AddPilotModal},
     data: function() {
         return {
-            pilots: [],
+            queryPilots: null,
             firstname: "",
             lastname: "",
             addPilotModalActive: false
         }
     },
     created() {
-        this.search();
+        if(this.$store.state.pilots.length == 0)
+            this.$store.dispatch('fetch_pilots')
+    },
+    computed: {
+        pilots() {
+            return this.queryPilots || this.$store.state.pilots;
+        }
     },
     methods: {
         reset() {
             this.firstname = "",
-                this.lastname = "",
-                this.search()
+            this.lastname = "",
+            this.queryPilots = null;
         },
         search() {
-            let url, params;
-            if (this.firstname == "" && this.lastname == "") {
-                url = "/api/pilots/"
-                params = {}
-            }
-            else {
-                url = "/api/pilots/search"
-                params = { firstname: this.firstname, lastname: this.lastname }
-            }
+            let url = "/api/pilots/search"
+            let params = { firstname: this.firstname, lastname: this.lastname }
             axios
                 .get(url, { params: params })
                 .then((response) => {
-                    this.pilots = response.data
+                    this.queryPilots = response.data;
                 })
         },
         remove(id) {
@@ -89,7 +90,7 @@ export default {
             return axios
                 .post(url, pilot)
                 .then(() => {
-                    this.search()
+                    this.dispatch('fetch_pilots')
                 });
         },
         ok(pilot) {
@@ -102,36 +103,6 @@ export default {
 </script>
 
 <style>
-.is-centered {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.table td {
-    vertical-align: middle;
-}
-
-.ids {
-    position: relative;
-    clear: both;
-    zoom: 1;
-}
-
-.ids:after {
-    visibility: hidden;
-    display: block;
-    content: "";
-    clear: both;
-    height: 0;
-}
-
-.controls {
-    max-width: 1000px;
-    padding: 25px;
-    border-radius: 10px;
-    background-color: lightblue;
-}
-
 .add-pilot .modal-card {
     width: 300px;
 }

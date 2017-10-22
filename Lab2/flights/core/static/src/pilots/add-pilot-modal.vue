@@ -32,7 +32,7 @@
                 </form>
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-info" @click="ok()" :disabled="$validator.errors.any()">Save changes</button>
+                <button class="button is-info" @click="ok()" :disabled="$validator.errors.any()">Add</button>
                 <button class="button" @click="cancel()">Cancel</button>
             </footer>
         </div>

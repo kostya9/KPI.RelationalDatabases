@@ -1,6 +1,7 @@
 from MySQLdb.connections import Connection
 from MySQLdb.cursors import Cursor
 from api.models import Pilot
+
 class Pilots:
     def __init__(self, cursor : Cursor):
         self.cursor = cursor
