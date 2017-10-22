@@ -33,7 +33,7 @@ class Flights:
         query = """
         SELECT Id, PilotId, AirplaneId, DepartureAirportId, ArrivalAirportId, DepartureTime, ArrivalTime FROM flights
         """
-        self.cursor.execute()
+        self.cursor.execute(query)
 
         flights = self.cursor.fetchall()
         mapped = map(self.__map_flight, flights)

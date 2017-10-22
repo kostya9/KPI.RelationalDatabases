@@ -133,6 +133,7 @@ def __map_body_to_flight(request: HttpRequest):
     mapped_flight = Flight(0, pilot_id, air_id, dep_airp_id, arr_airp_id, dep_time, arr_time)
     return mapped_flight
 
+@method_decorator(csrf_exempt, name='dispatch')
 def flights(request: HttpRequest):
     if request.method == 'GET':
         with connect() as connection:

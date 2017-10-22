@@ -90,7 +90,7 @@ export default {
             return axios
                 .post(url, pilot)
                 .then(() => {
-                    this.dispatch('fetch_pilots')
+                    this.$store.dispatch('fetch_pilots')
                 });
         },
         ok(pilot) {

@@ -47,6 +47,12 @@ var app = new Vue({
             return this.$route.name
         }
     },
+    created() {
+        this.$store.dispatch('fetch_airports')
+        this.$store.dispatch('fetch_pilots')
+        this.$store.dispatch('fetch_airplanes')
+        this.$store.dispatch('fetch_flights')
+    },
     el: '#root',
     components: {Pilots, PageTitle, NavMenu},
     watch: {

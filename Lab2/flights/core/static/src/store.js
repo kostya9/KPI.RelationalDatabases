@@ -5,7 +5,8 @@ const store = new Vuex.Store({
     state: {
         airplanes: [],
         pilots: [],
-        airports: []
+        airports: [],
+        flights: [] 
     },
     mutations: {
         replace_pilots(state, pilots) {
@@ -16,6 +17,9 @@ const store = new Vuex.Store({
         },
         replace_airports(state, airports) {
             state.airports = airports;
+        },
+        replace_flights(state, flights) {
+            state.flights = flights;
         }
     },
     actions: {
@@ -42,6 +46,14 @@ const store = new Vuex.Store({
                 .then(response => {
                     let airports = response.data;
                     this.commit('replace_airports', airports)
+                })
+        },
+        fetch_flights() {
+            let url = '/api/flights';
+            axios.get(url)
+                .then(response => {
+                    let flights = response.data;
+                    this.commit('replace_flights', flights);
                 })
         }
     }

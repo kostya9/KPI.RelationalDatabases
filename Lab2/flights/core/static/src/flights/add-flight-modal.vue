@@ -18,7 +18,7 @@
                                 <div class="select">
                                     <select v-model="pilot" v-validate="{required: true}">
                                         <option value="">Select Pilot</option>
-                                        <option v-for="pilot in pilots" :key="pilot.id">{{pilot.name}}</option>
+                                        <option v-for="pilot in pilots" :key="pilot.id" :value="pilot">{{pilot.name}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                                 <div class="select">
                                     <select v-model="airplane" v-validate="{required: true}">
                                         <option value="">Select Airplane</option>
-                                        <option v-for="airplane in airplanes" :key="airplane.id">{{airplane.name}}</option>
+                                        <option v-for="airplane in airplanes" :key="airplane.id" :value="airplane">{{airplane.name}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@
                                 <div class="select">
                                     <select v-model="arrivalAirport" v-validate="{required: true}">
                           <option value="">Select Airport</option>
-                          <option v-for="airport in arrivalAirports" :key="airport.id"  :value="airport">{{airport.name}}</option>
+                          <option v-for="airport in arrivalAirports" :key="airport.id" :value="airport">{{airport.name}}</option>
                       </select>
                                 </div>
                             </div>
@@ -109,13 +109,14 @@ export default {
       if(this.$validator.errors.any())
           return false;
 
+        console.log(this)
         this.$emit('ok', {
-          pilotId: this.pilot.id,
-          airplaneId: this.airplane.id,
-          departureAirportId: this.departureAirport.id,
-          arrivalAirportId: this.arrivalAirportId,
-          departureTime: this.departureTime, 
-          arrivalTime: this.arrivalTime
+          pilot_id: this.pilot.id,
+          airplane_id: this.airplane.id,
+          departure_airport_id: this.departureAirport.id,
+          arrival_airport_id: this.arrivalAirport.id,
+          departure_time: this.departureTime, 
+          arrival_time: this.arrivalTime
         })
     }
   },
