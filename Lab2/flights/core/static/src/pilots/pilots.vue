@@ -80,6 +80,7 @@ export default {
                 .delete(url)
                 .then(() => {
                     this.search()
+                    this.$store.dispatch('fetch_flights')
                 })
         },
         cancel() {

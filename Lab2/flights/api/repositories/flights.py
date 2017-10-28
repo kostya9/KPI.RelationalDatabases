@@ -5,6 +5,9 @@ from api.models import Flight
 class Flights:
     def __init__(self, cursor: Cursor):
         self.cursor = cursor
+        cursor.execute('SET NAMES utf8;')
+        cursor.execute('SET CHARACTER SET utf8;')
+        cursor.execute('SET character_set_connection=utf8;')
 
     def __map_flight(self, data):
         id = data[0]

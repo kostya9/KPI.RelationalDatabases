@@ -73,6 +73,7 @@ export default {
             axios.delete(url)
                 .then(response => {
                     this.$store.dispatch('fetch_airplanes')
+                    this.$store.dispatch('fetch_flights')
                 })
         },
         reset() {

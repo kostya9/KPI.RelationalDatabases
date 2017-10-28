@@ -15,9 +15,11 @@ import datetime
 
 
 def connect():
-    return MySQLdb.connect(host="localhost",
+    db = MySQLdb.connect(host="localhost",
                      user="root",
                      db="flights")
+    db.set_character_set('utf8')
+    return db
 
 # Create your views here.
 def index(request: HttpRequest):
@@ -35,8 +37,8 @@ def pilots(request: HttpRequest):
         body_unicode = request.body.decode('utf-8')
         pilot = json.loads(body_unicode)
         try:
-            firstname = pilot["firstname"]
-            lastname = pilot["lastname"]
+            firstname = pilot["firstname"].encode('utf-8')
+            lastname = pilot["lastname"].encode('utf-8')
             start_date = pilot["startdate"]
             start_date = datetime.datetime.strptime(start_date, "%Y-%m-%dT%H:%M:%S.%fZ")
             pilot = Pilot(0, firstname, lastname, start_date)

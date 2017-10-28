@@ -55,6 +55,7 @@ import axios from 'axios';
                 axios.delete(url)
                     .then(response => {
                         this.$store.dispatch('fetch_airports')
+                        this.$store.dispatch('fetch_flights')
                     })
             },
             reset() {

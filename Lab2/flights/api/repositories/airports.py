@@ -5,6 +5,9 @@ from api.models import Airport
 class Airports:
     def __init__(self, cursor: Cursor):
         self.cursor = cursor
+        cursor.execute('SET NAMES utf8;')
+        cursor.execute('SET CHARACTER SET utf8;')
+        cursor.execute('SET character_set_connection=utf8;')
 
     def __map_airport(self, data):
         return Airport(data[0], data[1], data[2], data[3])
