@@ -11,7 +11,7 @@ class Pilots:
 
     def all(self):
         self.cursor.execute("""
-        SELECT Id, FirstName, LastName, StartingDate FROM Pilots;
+        SELECT Id, FirstName, LastName, StartingDate FROM pilots;
         """)
         pilots = self.cursor.fetchall()
 
@@ -20,14 +20,14 @@ class Pilots:
 
     def add(self, pilot: Pilot):
         add_pilot = """
-        INSERT INTO PILOTS  (FirstName, LastName, StartingDate) VALUES
+        INSERT INTO pilots (FirstName, LastName, StartingDate) VALUES
 (%s, %s, %s)
         """
         data_pilot = (pilot.firstname, pilot.lastname, pilot.starting_date)
         self.cursor.execute(add_pilot, data_pilot)
 
     def search(self, firstname, lastname):
-        query = "SELECT Id, FirstName, LastName, StartingDate FROM Pilots WHERE FirstName LIKE %s AND LastName LIKE %s"
+        query = "SELECT Id, FirstName, LastName, StartingDate FROM pilots WHERE FirstName LIKE %s AND LastName LIKE %s"
         data_search = (firstname + '%', lastname + '%')
         self.cursor.execute(query, data_search)
         pilots = self.cursor.fetchall()
@@ -36,5 +36,5 @@ class Pilots:
         return list(mapped)
 
     def remove(self, id):
-        query = "DELETE FROM Pilots WHERE Id=%s"
+        query = "DELETE FROM pilots WHERE Id=%s"
         self.cursor.execute(query, (id))

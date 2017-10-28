@@ -16,14 +16,14 @@ class Airports:
 
     def all(self):
         self.cursor.execute("""
-        SELECT Id, Name, Code, City FROM Airports;
+        SELECT Id, Name, Code, City FROM airports;
         """)
 
         return self.__get_result()
 
     def search(self, name, code, city):
         query = """
-        SELECT Id, Name, Code, City FROM Airports
+        SELECT Id, Name, Code, City FROM airports
         WHERE Name LIKE %s AND Code LIKE %s AND City LIKE %s
         """
         params = (name + '%', code + '%', city + '%')
@@ -33,7 +33,7 @@ class Airports:
     
     def remove(self, id):
         query = """
-        DELETE FROM Airports WHERE Id=%s
+        DELETE FROM airports WHERE Id=%s
         """
         self.cursor.execute(query, (id))
         

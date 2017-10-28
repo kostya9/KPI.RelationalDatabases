@@ -13,7 +13,7 @@ class Airplanes:
 
     def all(self):
         self.cursor.execute("""
-        SELECT Id, ModelName, BuildDate FROM Airplanes;
+        SELECT Id, ModelName, BuildDate FROM airplanes;
         """)
         airplanes = self.cursor.fetchall()
 
@@ -21,12 +21,12 @@ class Airplanes:
         return list(mapped)
 
     def remove(self, id):
-        query = "DELETE FROM Airplanes WHERE Id=%s"
+        query = "DELETE FROM airplanes WHERE Id=%s"
         self.cursor.execute(query, (id))
 
     def search(self, model_name, start_date, end_date):
         query = """
-        SELECT Id, ModelName, BuildDate FROM Airplanes
+        SELECT Id, ModelName, BuildDate FROM airplanes
         WHERE ModelName LIKE %s AND (BuildDate > %s AND BuildDate < %s) 
         """
         
