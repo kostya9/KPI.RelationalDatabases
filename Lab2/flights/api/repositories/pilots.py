@@ -40,4 +40,12 @@ class Pilots:
 
     def remove(self, id):
         query = "DELETE FROM pilots WHERE Id=%s"
-        self.cursor.execute(query, (id))
+        self.cursor.execute(query, [id])
+
+    def import_all(self, pilots):
+        query = """
+        DELETE FROM pilots
+        """
+        self.cursor.execute(query)
+        for pilot in pilots:
+            self.add(pilot)

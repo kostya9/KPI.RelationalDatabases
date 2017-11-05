@@ -7,12 +7,16 @@ from api.repositories.airplanes import Airplanes
 from api.repositories.airports import Airports 
 from api.repositories.flights import Flights 
 
+from wsgiref.util import FileWrapper
+from io import StringIO
+
 import MySQLdb
-from api.models import Encoder, Pilot, Flight
+from api.models import Encoder, Pilot, Flight, Airplane, Airport
 import json
 
-import datetime
+import simplexml
 
+import datetime
 
 def connect():
     db = MySQLdb.connect(host="localhost",
@@ -59,6 +63,26 @@ def pilots_search(request: HttpRequest):
             pilots = repository.search(firstname, lastname)
         return JsonResponse(pilots, safe=False, encoder=Encoder)
 
+def pilots_export(request: HttpRequest):
+    with connect() as connection:
+        repository = Pilots(connection)
+        pilots = repository.all()
+    return export(request, pilots, 'pilots')
+
+@method_decorator(csrf_exempt, name='dispatch')
+def pilots_import(request: HttpRequest):
+    if request.method == 'POST':
+        body = request.FILES["file"].read()
+        print(body)
+        pilots_dict = simplexml.loads(body)['pilots']['pilot']
+        print(pilots_dict)
+        pilots = [Pilot(0, p['firstname'], p['lastname'], p['starting_date']) for p in pilots_dict]
+        with connect() as connection:
+            repository = Pilots(connection)
+            repository.import_all(pilots)
+        return HttpResponse(status=200)
+
+
 @method_decorator(csrf_exempt, name='dispatch')
 def pilots_remove(request: HttpRequest, id):
     if request.method == 'DELETE':
@@ -93,6 +117,23 @@ def airports_remove(request: HttpRequest, id):
             repository.remove(id)
         return HttpResponse(status=200)
 
+def airports_export(request: HttpRequest):
+    with connect() as connection:
+        repository = Airports(connection)
+        airports = repository.all()
+    return export(request, airports, 'airports')
+
+@method_decorator(csrf_exempt, name='dispatch')
+def airports_import(request: HttpRequest):
+    if request.method == 'POST':
+        body = request.FILES["file"].read()
+        airports_dict = simplexml.loads(body)['airports']
+        airports = [Airport(0, a['name'], a['code'], a['city']) for a in airports_dict]
+        with connect() as connection:
+            repository = Airports(connection)
+            repository.import_all(airports)
+        return HttpResponse(status=200)
+
 @method_decorator(csrf_exempt, name='dispatch')
 def airplanes(request: HttpRequest):
     if request.method == 'GET':
@@ -120,6 +161,37 @@ def airplanes_search(request: HttpRequest):
             airplanes = repository.search(model_name, build_start, build_end)
         return JsonResponse(airplanes, safe=False, encoder=Encoder)
 
+
+def airplanes_export(request: HttpRequest):
+    with connect() as connection:
+        repository = Airplanes(connection)
+        airplanes = repository.all()
+    return export(request, airplanes, 'airplanes')
+
+@method_decorator(csrf_exempt, name='dispatch')
+def airplanes_import(request: HttpRequest):
+    if request.method == 'POST':
+        body = request.FILES["file"].read()
+        airplanes_dict = simplexml.loads(body)['airplanes']['airplane']
+        airplanes = [Airplane(0, a['modelname'], a['builddate']) for a in airplanes_dict]
+        with connect() as connection:
+            repository = Airplanes(connection)
+            repository.import_all(airplanes)
+        return HttpResponse(status=200)
+
+def dict_from_class(cls):
+     return dict(
+         (key, value)
+         for (key, value) in cls.__dict__.items()
+         )
+
+def export(request: HttpRequest, data, name):
+    if request.method == 'GET':
+        data = {name: [{name[0:name.__len__() - 1]: dict_from_class(el)} for el in data]}
+        export = simplexml.dumps(data)
+        response = HttpResponse(export, content_type='application/json')
+        response['Content-Disposition'] = 'attachment; filename="%s.xml"' % (name)
+        return response
 
 def __map_body_to_flight(request: HttpRequest):
     body_unicode = request.body.decode('utf-8')

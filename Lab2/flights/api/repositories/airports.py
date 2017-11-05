@@ -24,6 +24,12 @@ class Airports:
 
         return self.__get_result()
 
+    def add(self, airport: Airport):
+        query = """
+            INSERT INTO airports (Name, Code, City) VALUES (%s, %s, %s)
+        """
+        self.cursor.execute(query, (airport.name, airport.code, airport.city))
+
     def search(self, name, code, city):
         query = """
         SELECT Id, Name, Code, City FROM airports
@@ -34,9 +40,18 @@ class Airports:
 
         return self.__get_result()
     
-    def remove(self, id):
+    def remove(self, id: int):
         query = """
         DELETE FROM airports WHERE Id=%s
         """
-        self.cursor.execute(query, (id))
+        self.cursor.execute(query, [id])
+
+    def import_all(self, airports):
+        query = """
+        DELETE FROM airports
+        """
+        self.cursor.execute(query)
+        for airport in airports:
+            self.add(airport)
+
         

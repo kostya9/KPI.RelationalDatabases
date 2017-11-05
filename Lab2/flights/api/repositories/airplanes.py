@@ -14,6 +14,20 @@ class Airplanes:
     def __map_airplane(self, data):
         return Airplane(data[0], data[1], data[2])
 
+    def add(self, airplane: Airplane):
+        query = """
+        INSERT INTO airplanes (ModelName, BuildDate) VALUES (%s, %s)
+        """
+        self.cursor.execute(query, (airplane.modelname, airplane.builddate))
+
+    def import_all(self, airplanes):
+        query = """
+        DELETE FROM airplanes 
+        """
+        self.cursor.execute(query)
+        for airplane in airplanes:
+            self.add(airplane)
+
     def all(self):
         self.cursor.execute("""
         SELECT Id, ModelName, BuildDate FROM airplanes;
@@ -25,7 +39,7 @@ class Airplanes:
 
     def remove(self, id):
         query = "DELETE FROM airplanes WHERE Id=%s"
-        self.cursor.execute(query, (id))
+        self.cursor.execute(query, [id])
 
     def search(self, model_name, start_date, end_date):
         query = """

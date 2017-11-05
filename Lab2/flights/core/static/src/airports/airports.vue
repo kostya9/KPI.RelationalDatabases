@@ -2,6 +2,7 @@
 <span>
     <section class="container ids">
         <nav class="level is-centered controls" v-on:keyup.13="search()">
+            <div class="level-left">
                 <level-control>
                     <input class="input" type="text" placeholder="Name" v-model="name">
                 </level-control>
@@ -11,8 +12,8 @@
                 <level-control>
                     <input class="input" type="text" placeholder="City" v-model="city">
                 </level-control>
-                                <level-control>
-                </level-control>
+            </div>
+            <div class="level-right">
                 <level-control>
                     <button @click="search()" class="button is-default">
                         Search
@@ -23,6 +24,7 @@
                         Reset
                     </button>
                 </level-control>
+            </div>
         </nav>
         <airports-table @remove="remove" class="is-centered" :airports="airports"></airports-table>
     </section>

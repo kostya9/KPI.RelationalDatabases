@@ -1,36 +1,32 @@
 <template>
-      <table class="table">
-        <thead>
-            <th>Model Name</th>
-            <th>Build Date</th>
-            <th>Remove</th>
-        </thead>
-        <tbody>
-            <tr v-for='airplane in airplanes' :key="airplane.id">
-                <td>{{airplane.modelname}}</td>
-                <td>{{airplane.builddate }}</td>
-                <td><button class="button is-danger" @click="remove(airplane.id)">Remove</button></td>
-            </tr>
-        </tbody>
-    </table>
+<table-template @import="onImport()" :rows="airplanes" :columnDefs="columnDefs" @remove="remove" importUrl="/api/airplanes/import" exportUrl="/api/airplanes/export">
+</table-template>
 </template>
 
 <script>
+    import TableTemplate from './../shared/table-template.vue';
     export default {
     props: ['airplanes'],
+    components: {TableTemplate},
     data: function() {
         return {
+            columnDefs: [{
+                    name: 'Model Name',
+                    getValue: (a) => a.modelname
+                }, {
+                    name: 'Build Date',
+                    getValue: (a) => a.builddate
+                }
+            ]
         }
     },
     methods: {
         remove(id) {
             this.$emit('remove', id)
+        },
+        onImport() {
+            this.$store.dispatch('fetch_airplanes')
         }
     }
 };
 </script>
-
-<style>
-
-</style>
-

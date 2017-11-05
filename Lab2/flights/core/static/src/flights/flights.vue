@@ -1,6 +1,6 @@
 <template>
 <div>
-<div class="container ids">
+<div class="container">
     <button class="button is-primary is-large new-flight" @click="addFlightModal = true">
         New
     </button>

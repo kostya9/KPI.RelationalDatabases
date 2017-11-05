@@ -1,6 +1,7 @@
 <template>
     <section class="container ids">
         <nav class="is-centered level controls">
+            <div class="level-left">
             <level-control>
                 <input class="input" type="text" placeholder="Model Name" v-model="modelname">
             </level-control>
@@ -24,6 +25,8 @@
                     </div>
                 </div>
             </level-control>
+            </div>
+            <div class="level-right">
             <level-control>
                 <button class="button is-default" @click="search()">
                     Search
@@ -34,6 +37,7 @@
                     Reset
                 </button>
             </level-control>
+            </div>
         </nav>
         <airplanes-table @remove="remove" class="is-centered" :airplanes="airplanes">
         </airplanes-table>
@@ -99,5 +103,9 @@ export default {
 
 .build-range .field-label  {
     margin-right: 1rem;
+
+}
+input[type=date] {
+    min-width: 200px;
 }
 </style>

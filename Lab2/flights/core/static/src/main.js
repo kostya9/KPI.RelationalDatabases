@@ -34,9 +34,7 @@ var app = new Vue({
     <div>
     <page-title>{{title}}</page-title>
     <nav-menu></nav-menu>
-    <transition name="appear">
     <router-view class="route"></router-view>
-    </transition>
     </div>
     `,
     data: {

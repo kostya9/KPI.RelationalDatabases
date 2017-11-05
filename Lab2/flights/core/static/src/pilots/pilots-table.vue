@@ -1,32 +1,34 @@
 <template>
-      <table class="table">
-        <thead>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>On duty from</th>
-            <th>Remove</th>
-        </thead>
-        <tbody>
-            <tr v-for='pilot in pilots' :key="pilot.id">
-                <td>{{pilot.firstname}}</td>
-                <td>{{pilot.lastname}}</td>
-                <td>{{pilot.starting_date}}</td>
-                <td><button class="button is-danger" @click="remove(pilot.id)">Remove</button></td>
-            </tr>
-        </tbody>
-    </table>
+    <table-template @import="onImport()" :rows="pilots" :columnDefs="columnDefs" @remove="remove" exportUrl="/api/pilots/export" importUrl="/api/pilots/import">
+    </table-template>
 </template>
 
 <script>
+import TableTemplate from './../shared/table-template.vue';
     export default {
+    components: {TableTemplate},
     props: ['pilots'],
     data: function() {
         return {
+            columnDefs: [{
+                name: 'First Name',
+                getValue: (p) => p.firstname
+            }, {
+                name: 'Last Name',
+                getValue: (p) => p.lastname,
+            }, {
+                name: 'On duty from',
+                getValue: (p) => p.starting_date
+            }
+            ]
         }
     },
     methods: {
         remove(id) {
             this.$emit('remove', id)
+        },
+        onImport() {
+            this.$store.dispatch('fetch_pilots')
         }
     }
 };

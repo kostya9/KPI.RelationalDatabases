@@ -9,6 +9,8 @@
                 <level-control>
                     <input class="input" type="text" placeholder="Last Name" v-model="lastname">
                 </level-control>
+            </div>
+            <div class="level-right">
                 <level-control>
                     <button @click="search()" class="button is-default">
                         Search
@@ -17,13 +19,6 @@
                 <level-control>
                     <button @click="reset()" class="button is-default">
                         Reset
-                    </button>
-                </level-control>
-            </div>
-            <div class="level-right">
-                <level-control>
-                    <button class="button is-info" @click="addPilotModalActive = !addPilotModalActive">
-                        New Pilot
                     </button>
                 </level-control>
             </div>
