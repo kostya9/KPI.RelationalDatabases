@@ -74,7 +74,7 @@ def pilots_import(request: HttpRequest):
     if request.method == 'POST':
         body = request.FILES["file"].read()
         print(body)
-        pilots_dict = simplexml.loads(body)['pilots']['pilot']
+        pilots_dict = simplexml.loads(body)['pilots']
         print(pilots_dict)
         pilots = [Pilot(0, p['firstname'], p['lastname'], p['starting_date']) for p in pilots_dict]
         with connect() as connection:
@@ -172,7 +172,7 @@ def airplanes_export(request: HttpRequest):
 def airplanes_import(request: HttpRequest):
     if request.method == 'POST':
         body = request.FILES["file"].read()
-        airplanes_dict = simplexml.loads(body)['airplanes']['airplane']
+        airplanes_dict = simplexml.loads(body)['airplanes']
         airplanes = [Airplane(0, a['modelname'], a['builddate']) for a in airplanes_dict]
         with connect() as connection:
             repository = Airplanes(connection)
