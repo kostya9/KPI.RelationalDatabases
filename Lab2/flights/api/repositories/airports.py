@@ -38,10 +38,10 @@ class Airports:
 
         params = (code + '%', city + '%')
         if name is not None and name is not "":
-            query += """ AND MATCH (Name)
+            query += """ AND NOT MATCH (Name)
         AGAINST (%s IN BOOLEAN MODE)
             """
-            params += ('-' + name,)
+            params += ('"' + name + '"',)
         self.cursor.execute(query, params)
 
         return self.__get_result()
