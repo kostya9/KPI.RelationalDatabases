@@ -1,5 +1,5 @@
 <template>
-<table-template @import="onImport()" :rows="airports" :columnDefs="columnDefs" @remove="remove" importUrl='/api/airports/import' exportUrl="/api/airports/export">
+<table-template class="airports-table-wrapper" @import="onImport()" :rows="airports" :columnDefs="columnDefs" @remove="remove" importUrl='/api/airports/import' exportUrl="/api/airports/export">
 </table-template>
 </template>
 <script>
@@ -32,3 +32,8 @@ import TableTemplate from './../shared/table-template.vue';
         }
     }
 </script>
+<style>
+.airports-table-wrapper th:first-of-type {
+    min-width: 100px;
+} 
+</style>

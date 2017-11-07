@@ -974,6 +974,7 @@ process.umask = function() { return 0; };
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4007db98_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_level_control_vue__ = __webpack_require__(21);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
@@ -1014,7 +1015,7 @@ if (false) {(function () {
   })
 })()}
 
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ }),
@@ -1022,7 +1023,9 @@ if (false) {(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_table_template_vue__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_table_template_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_table_template_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7495e445_hasScoped_true_node_modules_vue_loader_lib_selector_type_template_index_0_table_template_vue__ = __webpack_require__(47);
 var disposed = false
 function injectStyle (ssrContext) {
@@ -1041,7 +1044,7 @@ var __vue_scopeId__ = "data-v-7495e445"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_table_template_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_table_template_vue___default.a,
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7495e445_hasScoped_true_node_modules_vue_loader_lib_selector_type_template_index_0_table_template_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
@@ -1067,7 +1070,7 @@ if (false) {(function () {
   })
 })()}
 
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ }),
@@ -2370,11 +2373,11 @@ var _airports = __webpack_require__(61);
 
 var _airports2 = _interopRequireDefault(_airports);
 
-var _flights = __webpack_require__(67);
+var _flights = __webpack_require__(69);
 
 var _flights2 = _interopRequireDefault(_flights);
 
-var _store = __webpack_require__(77);
+var _store = __webpack_require__(84);
 
 var _store2 = _interopRequireDefault(_store);
 
@@ -2382,19 +2385,19 @@ var _vuex = __webpack_require__(14);
 
 var _vuex2 = _interopRequireDefault(_vuex);
 
-var _pageTitle = __webpack_require__(78);
+var _pageTitle = __webpack_require__(85);
 
 var _pageTitle2 = _interopRequireDefault(_pageTitle);
 
-var _navMenu = __webpack_require__(81);
+var _navMenu = __webpack_require__(88);
 
 var _navMenu2 = _interopRequireDefault(_navMenu);
 
-var _vueRouter = __webpack_require__(84);
+var _vueRouter = __webpack_require__(91);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _styles = __webpack_require__(85);
+var _styles = __webpack_require__(92);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -2451,6 +2454,7 @@ var app = new Vue({
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_pilots_vue__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_pilots_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_pilots_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2d9a9651_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_pilots_vue__ = __webpack_require__(52);
 var disposed = false
 function injectStyle (ssrContext) {
@@ -2469,7 +2473,7 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_pilots_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_pilots_vue___default.a,
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2d9a9651_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_pilots_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
@@ -2573,14 +2577,33 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 /* 20 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_level_control_vue__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pilots_table_vue__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_pilot_modal_vue__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_axios__);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _levelControl = __webpack_require__(6);
+
+var _levelControl2 = _interopRequireDefault(_levelControl);
+
+var _pilotsTable = __webpack_require__(22);
+
+var _pilotsTable2 = _interopRequireDefault(_pilotsTable);
+
+var _addPilotModal = __webpack_require__(49);
+
+var _addPilotModal2 = _interopRequireDefault(_addPilotModal);
+
+var _axios = __webpack_require__(4);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -2613,14 +2636,9 @@ module.exports = function listToStyles (parentId, list) {
 //
 //
 
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-    components: { LevelControl: __WEBPACK_IMPORTED_MODULE_0__shared_level_control_vue__["a" /* default */], PilotsTable: __WEBPACK_IMPORTED_MODULE_1__pilots_table_vue__["a" /* default */], AddPilotModal: __WEBPACK_IMPORTED_MODULE_2__add_pilot_modal_vue__["a" /* default */] },
-    data: function () {
+exports.default = {
+    components: { LevelControl: _levelControl2.default, PilotsTable: _pilotsTable2.default, AddPilotModal: _addPilotModal2.default },
+    data: function data() {
         return {
             queryPilots: null,
             firstname: "",
@@ -2628,47 +2646,58 @@ module.exports = function listToStyles (parentId, list) {
             addPilotModalActive: false
         };
     },
-    created() {
+    created: function created() {
         if (this.$store.state.pilots.length == 0) this.$store.dispatch('fetch_pilots');
     },
+
     computed: {
-        pilots() {
+        pilots: function pilots() {
             return this.queryPilots || this.$store.state.pilots;
         }
     },
     methods: {
-        reset() {
+        reset: function reset() {
             this.firstname = "", this.lastname = "", this.queryPilots = null;
         },
-        search() {
-            let url = "/api/pilots/search";
-            let params = { firstname: this.firstname, lastname: this.lastname };
-            __WEBPACK_IMPORTED_MODULE_3_axios___default.a.get(url, { params: params }).then(response => {
-                this.queryPilots = response.data;
+        search: function search() {
+            var _this = this;
+
+            var url = "/api/pilots/search";
+            var params = { firstname: this.firstname, lastname: this.lastname };
+            _axios2.default.get(url, { params: params }).then(function (response) {
+                _this.queryPilots = response.data;
             });
         },
-        remove(id) {
-            let url = '/api/pilots/' + id;
-            __WEBPACK_IMPORTED_MODULE_3_axios___default.a.delete(url).then(() => {
-                this.search();
-                this.$store.dispatch('fetch_flights');
+        remove: function remove(id) {
+            var _this2 = this;
+
+            var url = '/api/pilots/' + id;
+            _axios2.default.delete(url).then(function () {
+                _this2.search();
+                _this2.$store.dispatch('fetch_flights');
             });
         },
-        cancel() {
+        cancel: function cancel() {
             this.addPilotModalActive = false;
         },
-        addPilot(pilot) {
-            let url = '/api/pilots/';
-            return __WEBPACK_IMPORTED_MODULE_3_axios___default.a.post(url, pilot).then(() => {
-                this.$store.dispatch('fetch_pilots');
+        addPilot: function addPilot(pilot) {
+            var _this3 = this;
+
+            var url = '/api/pilots/';
+            return _axios2.default.post(url, pilot).then(function () {
+                _this3.$store.dispatch('fetch_pilots');
             });
         },
-        ok(pilot) {
-            this.addPilot(pilot).then(() => this.search());
+        ok: function ok(pilot) {
+            var _this4 = this;
+
+            this.addPilot(pilot).then(function () {
+                return _this4.search();
+            });
             this.cancel();
         }
     }
-});
+};
 
 /***/ }),
 /* 21 */
@@ -2701,7 +2730,9 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_pilots_table_vue__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_pilots_table_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_pilots_table_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_cb00a25c_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_pilots_table_vue__ = __webpack_require__(48);
 var disposed = false
 function injectStyle (ssrContext) {
@@ -2720,7 +2751,7 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_pilots_table_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_pilots_table_vue___default.a,
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_cb00a25c_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_pilots_table_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
@@ -2746,7 +2777,7 @@ if (false) {(function () {
   })
 })()}
 
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ }),
@@ -2791,43 +2822,57 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 /* 25 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_table_template_vue__ = __webpack_require__(7);
-//
-//
-//
-//
-//
 
 
-/* harmony default export */ __webpack_exports__["a"] = ({
-    components: { TableTemplate: __WEBPACK_IMPORTED_MODULE_0__shared_table_template_vue__["a" /* default */] },
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _tableTemplate = __webpack_require__(7);
+
+var _tableTemplate2 = _interopRequireDefault(_tableTemplate);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    components: { TableTemplate: _tableTemplate2.default },
     props: ['pilots'],
-    data: function () {
+    data: function data() {
         return {
             columnDefs: [{
                 name: 'First Name',
-                getValue: p => p.firstname
+                getValue: function getValue(p) {
+                    return p.firstname;
+                }
             }, {
                 name: 'Last Name',
-                getValue: p => p.lastname
+                getValue: function getValue(p) {
+                    return p.lastname;
+                }
             }, {
                 name: 'On duty from',
-                getValue: p => p.starting_date
+                getValue: function getValue(p) {
+                    return p.starting_date;
+                }
             }]
         };
     },
     methods: {
-        remove(id) {
+        remove: function remove(id) {
             this.$emit('remove', id);
         },
-        onImport() {
+        onImport: function onImport() {
             this.$store.dispatch('fetch_pilots');
         }
     }
-});
+}; //
+//
+//
+//
+//
 
 /***/ }),
 /* 26 */
@@ -2871,69 +2916,78 @@ exports.push([module.i, "\ninput[type=file][data-v-7495e445] {\r\n    position: 
 
 /***/ }),
 /* 28 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
-/* harmony default export */ __webpack_exports__["a"] = ({
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _axios = __webpack_require__(4);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
     props: ['rows', 'exportUrl', 'importUrl', 'columnDefs'],
-    data: function () {
+    data: function data() {
         return {
             removeActive: false,
             curRemoveId: 0
         };
     },
     methods: {
-        import() {
+        import: function _import() {
             this.$emit('import');
         },
-        remove(id) {
+        remove: function remove(id) {
             this.$emit('remove', id);
         },
-        fileChange(event) {
-            let file = event.target.files[0];
+        fileChange: function fileChange(event) {
+            var _this = this;
+
+            var file = event.target.files[0];
             if (file == null) return;
 
-            let data = new FormData();
+            var data = new FormData();
             data.append('file', file);
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(this.importUrl, data).then(() => {
-                this.$emit('import');
+            _axios2.default.post(this.importUrl, data).then(function () {
+                _this.$emit('import');
             });
         }
     }
-});
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 29 */
@@ -3939,7 +3993,9 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_add_pilot_modal_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_add_pilot_modal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_add_pilot_modal_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_12824e06_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_add_pilot_modal_vue__ = __webpack_require__(51);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
@@ -3954,7 +4010,7 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_add_pilot_modal_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_add_pilot_modal_vue___default.a,
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_12824e06_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_add_pilot_modal_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
@@ -3980,14 +4036,19 @@ if (false) {(function () {
   })
 })()}
 
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ }),
 /* 50 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 //
 //
 //
@@ -4030,12 +4091,12 @@ if (false) {(function () {
 //
 //
 
-/* harmony default export */ __webpack_exports__["a"] = ({
+exports.default = {
     methods: {
-        cancel() {
+        cancel: function cancel() {
             this.$emit('cancel');
         },
-        ok() {
+        ok: function ok() {
             this.$validator.validateAll();
 
             if (this.$validator.errors.any()) return false;
@@ -4043,14 +4104,14 @@ if (false) {(function () {
             this.$emit('ok', { firstname: this.firstname, lastname: this.lastname, startdate: new Date(this.startdate) });
         }
     },
-    data: function () {
+    data: function data() {
         return {
             firstname: "",
             lastname: "",
             startdate: ""
         };
     }
-});
+};
 
 /***/ }),
 /* 51 */
@@ -4486,6 +4547,7 @@ if (false) {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airplanes_vue__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airplanes_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airplanes_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5302ab16_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_airplanes_vue__ = __webpack_require__(60);
 var disposed = false
 function injectStyle (ssrContext) {
@@ -4504,7 +4566,7 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airplanes_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airplanes_vue___default.a,
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5302ab16_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_airplanes_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
@@ -4575,69 +4637,36 @@ exports.push([module.i, "\n.build-range .label {\r\n    width: 100px;\r\n    tra
 
 /***/ }),
 /* 56 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_level_control_vue__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__airplanes_table_vue__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _levelControl = __webpack_require__(6);
 
-/* harmony default export */ __webpack_exports__["a"] = ({
-    components: { AirplanesTable: __WEBPACK_IMPORTED_MODULE_1__airplanes_table_vue__["a" /* default */], LevelControl: __WEBPACK_IMPORTED_MODULE_0__shared_level_control_vue__["a" /* default */] },
-    mounted() {
+var _levelControl2 = _interopRequireDefault(_levelControl);
+
+var _airplanesTable = __webpack_require__(57);
+
+var _airplanesTable2 = _interopRequireDefault(_airplanesTable);
+
+var _axios = __webpack_require__(4);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    components: { AirplanesTable: _airplanesTable2.default, LevelControl: _levelControl2.default },
+    mounted: function mounted() {
         if (this.$store.state.airplanes.length == 0) this.$store.dispatch('fetch_airplanes');
     },
-    data: function () {
+
+    data: function data() {
         return {
             queryAirplanes: null,
             buildrangeStart: '1900-01-01',
@@ -4646,21 +4675,25 @@ exports.push([module.i, "\n.build-range .label {\r\n    width: 100px;\r\n    tra
         };
     },
     methods: {
-        search() {
-            let url = '/api/airplanes/search';
-            let params = { buildrangeStart: this.buildrangeStart, buildrangeEnd: this.buildrangeEnd, modelname: this.modelname };
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get(url, { params }).then(response => {
-                this.queryAirplanes = response.data;
+        search: function search() {
+            var _this = this;
+
+            var url = '/api/airplanes/search';
+            var params = { buildrangeStart: this.buildrangeStart, buildrangeEnd: this.buildrangeEnd, modelname: this.modelname };
+            _axios2.default.get(url, { params: params }).then(function (response) {
+                _this.queryAirplanes = response.data;
             });
         },
-        remove(id) {
-            let url = '/api/airplanes/' + id;
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.delete(url).then(response => {
-                this.$store.dispatch('fetch_airplanes');
-                this.$store.dispatch('fetch_flights');
+        remove: function remove(id) {
+            var _this2 = this;
+
+            var url = '/api/airplanes/' + id;
+            _axios2.default.delete(url).then(function (response) {
+                _this2.$store.dispatch('fetch_airplanes');
+                _this2.$store.dispatch('fetch_flights');
             });
         },
-        reset() {
+        reset: function reset() {
             this.queryAirplanes = null;
             this.buildrangeStart = '1900-01-01';
             this.buildrangeEnd = new Date().toISOString().slice(0, 10);
@@ -4668,18 +4701,65 @@ exports.push([module.i, "\n.build-range .label {\r\n    width: 100px;\r\n    tra
         }
     },
     computed: {
-        airplanes() {
+        airplanes: function airplanes() {
             return this.queryAirplanes || this.$store.state.airplanes;
         }
     }
-});
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 57 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airplanes_table_vue__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airplanes_table_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airplanes_table_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_756517f6_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_airplanes_table_vue__ = __webpack_require__(59);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
@@ -4694,7 +4774,7 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airplanes_table_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airplanes_table_vue___default.a,
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_756517f6_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_airplanes_table_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
@@ -4720,45 +4800,57 @@ if (false) {(function () {
   })
 })()}
 
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ }),
 /* 58 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_table_template_vue__ = __webpack_require__(7);
-//
-//
-//
-//
-//
 
 
-/* harmony default export */ __webpack_exports__["a"] = ({
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _tableTemplate = __webpack_require__(7);
+
+var _tableTemplate2 = _interopRequireDefault(_tableTemplate);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
     props: ['airplanes'],
-    components: { TableTemplate: __WEBPACK_IMPORTED_MODULE_0__shared_table_template_vue__["a" /* default */] },
-    data: function () {
+    components: { TableTemplate: _tableTemplate2.default },
+    data: function data() {
         return {
             columnDefs: [{
                 name: 'Model Name',
-                getValue: a => a.modelname
+                getValue: function getValue(a) {
+                    return a.modelname;
+                }
             }, {
                 name: 'Build Date',
-                getValue: a => a.builddate
+                getValue: function getValue(a) {
+                    return a.builddate;
+                }
             }]
         };
     },
     methods: {
-        remove(id) {
+        remove: function remove(id) {
             this.$emit('remove', id);
         },
-        onImport() {
+        onImport: function onImport() {
             this.$store.dispatch('fetch_airplanes');
         }
     }
-});
+}; //
+//
+//
+//
+//
 
 /***/ }),
 /* 59 */
@@ -4971,7 +5063,8 @@ if (false) {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airports_vue__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_63f542f1_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_airports_vue__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airports_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airports_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_63f542f1_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_airports_vue__ = __webpack_require__(68);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -4985,7 +5078,7 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airports_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airports_vue___default.a,
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_63f542f1_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_airports_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
@@ -5016,60 +5109,33 @@ if (false) {(function () {
 
 /***/ }),
 /* 62 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__airports_table_vue__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_level_control_vue__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _airportsTable = __webpack_require__(63);
 
+var _airportsTable2 = _interopRequireDefault(_airportsTable);
 
-/* harmony default export */ __webpack_exports__["a"] = ({
-    components: { AirportsTable: __WEBPACK_IMPORTED_MODULE_0__airports_table_vue__["a" /* default */], LevelControl: __WEBPACK_IMPORTED_MODULE_1__shared_level_control_vue__["a" /* default */] },
+var _levelControl = __webpack_require__(6);
 
-    data: function () {
+var _levelControl2 = _interopRequireDefault(_levelControl);
+
+var _axios = __webpack_require__(4);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    components: { AirportsTable: _airportsTable2.default, LevelControl: _levelControl2.default },
+
+    data: function data() {
         return {
             name: '',
             code: '',
@@ -5077,62 +5143,110 @@ if (false) {(function () {
             queryAirports: null
         };
     },
-    mounted: function () {
+    mounted: function mounted() {
         if (this.$store.state.airports.length == 0) this.$store.dispatch('fetch_airports');
     },
     methods: {
-        remove(id) {
-            let url = '/api/airports/' + id;
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.delete(url).then(response => {
-                this.$store.dispatch('fetch_airports');
-                this.$store.dispatch('fetch_flights');
+        remove: function remove(id) {
+            var _this = this;
+
+            var url = '/api/airports/' + id;
+            _axios2.default.delete(url).then(function (response) {
+                _this.$store.dispatch('fetch_airports');
+                _this.$store.dispatch('fetch_flights');
             });
         },
-        reset() {
+        reset: function reset() {
             this.queryAirports = null;
             this.name = '', this.code = '', this.city = '';
         },
-        search() {
-            let url = '/api/airports/search';
-            let params = { name: this.name, code: this.code, city: this.city };
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get(url, { params }).then(response => {
-                this.queryAirports = response.data;
+        search: function search() {
+            var _this2 = this;
+
+            var url = '/api/airports/search';
+            var params = { name: this.name, code: this.code, city: this.city };
+            _axios2.default.get(url, { params: params }).then(function (response) {
+                _this2.queryAirports = response.data;
             });
         }
-
     },
     computed: {
-        airports() {
+        airports: function airports() {
             return this.queryAirports || this.$store.state.airports;
         },
-        cities() {
-            let allCities = this.$store.state.airports.map(a => a.city);
+        cities: function cities() {
+            var allCities = this.$store.state.airports.map(function (a) {
+                return a.city;
+            });
             return Array.from(new Set(allCities));
         }
     }
-});
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 63 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airports_table_vue__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_35e3391c_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_airports_table_vue__ = __webpack_require__(65);
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airports_table_vue__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airports_table_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airports_table_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_35e3391c_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_airports_table_vue__ = __webpack_require__(98);
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(96)
+}
 var normalizeComponent = __webpack_require__(0)
 /* script */
 
 /* template */
 
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airports_table_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_airports_table_vue___default.a,
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_35e3391c_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_airports_table_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
@@ -5158,85 +5272,67 @@ if (false) {(function () {
   })
 })()}
 
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ }),
-/* 64 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 64 */,
+/* 65 */,
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_table_template_vue__ = __webpack_require__(7);
-//
-//
-//
-//
 
 
-/* harmony default export */ __webpack_exports__["a"] = ({
-    components: { TableTemplate: __WEBPACK_IMPORTED_MODULE_0__shared_table_template_vue__["a" /* default */] },
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _tableTemplate = __webpack_require__(7);
+
+var _tableTemplate2 = _interopRequireDefault(_tableTemplate);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    components: { TableTemplate: _tableTemplate2.default },
     props: ['airports'],
-    data: function () {
+    data: function data() {
         return {
             columnDefs: [{
                 name: 'Name',
-                getValue: a => a.name
+                getValue: function getValue(a) {
+                    return a.name;
+                }
             }, {
                 name: 'Code',
-                getValue: a => a.code
+                getValue: function getValue(a) {
+                    return a.code;
+                }
             }, {
                 name: 'City',
-                getValue: a => a.city
+                getValue: function getValue(a) {
+                    return a.city;
+                }
             }]
         };
     },
     methods: {
-        remove(id) {
+        remove: function remove(id) {
             this.$emit('remove', id);
         },
-        onImport() {
+        onImport: function onImport() {
             this.$store.dispatch('fetch_airports');
         }
     }
-});
+}; //
+//
+//
+//
 
 /***/ }),
-/* 65 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("table-template", {
-    attrs: {
-      rows: _vm.airports,
-      columnDefs: _vm.columnDefs,
-      importUrl: "/api/airports/import",
-      exportUrl: "/api/airports/export"
-    },
-    on: {
-      import: function($event) {
-        _vm.onImport()
-      },
-      remove: _vm.remove
-    }
-  })
-}
-var staticRenderFns = []
-render._withStripped = true
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-35e3391c", esExports)
-  }
-}
-
-/***/ }),
-/* 66 */
+/* 67 */,
+/* 68 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5443,17 +5539,18 @@ if (false) {
 }
 
 /***/ }),
-/* 67 */
+/* 69 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_flights_vue__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3ca39539_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_flights_vue__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_flights_vue__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_flights_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_flights_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3ca39539_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_flights_vue__ = __webpack_require__(83);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(68)
+  __webpack_require__(70)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -5467,7 +5564,7 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_flights_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_flights_vue___default.a,
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3ca39539_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_flights_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
@@ -5497,13 +5594,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 68 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(69);
+var content = __webpack_require__(71);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -5523,7 +5620,7 @@ if(false) {
 }
 
 /***/ }),
-/* 69 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -5537,79 +5634,94 @@ exports.push([module.i, "\n.card {\r\n    margin-bottom: 0px;\r\n    margin-top:
 
 
 /***/ }),
-/* 70 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__add_flight_modal_vue__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__edit_flight_modal_vue__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
-Promise.delay = ms => new Promise(function (resolve, reject) {
-    setTimeout(function () {
-        resolve();
-    }, ms);
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
 });
 
+var _addFlightModal = __webpack_require__(73);
 
+var _addFlightModal2 = _interopRequireDefault(_addFlightModal);
 
-/* harmony default export */ __webpack_exports__["a"] = ({
-    components: { AddFlightModal: __WEBPACK_IMPORTED_MODULE_0__add_flight_modal_vue__["a" /* default */], EditFlightModal: __WEBPACK_IMPORTED_MODULE_1__edit_flight_modal_vue__["a" /* default */] },
-    data: function () {
+var _editFlightModal = __webpack_require__(78);
+
+var _editFlightModal2 = _interopRequireDefault(_editFlightModal);
+
+var _axios = __webpack_require__(4);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+Promise.delay = function (ms) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            resolve();
+        }, ms);
+    });
+};
+exports.default = {
+    components: { AddFlightModal: _addFlightModal2.default, EditFlightModal: _editFlightModal2.default },
+    data: function data() {
         return {
             editFlightModalValue: null,
             addFlightModal: false,
@@ -5617,61 +5729,72 @@ Promise.delay = ms => new Promise(function (resolve, reject) {
         };
     },
     filters: {
-        datetime(dateText) {
-            let date = new Date(dateText);
+        datetime: function datetime(dateText) {
+            var date = new Date(dateText);
             return date.toLocaleString();
         }
     },
-    mounted() {
+    mounted: function mounted() {
         if (this.$store.state.flights.length == 0) this.$store.dispatch('fetch_flights');
     },
+
     computed: {
-        flights() {
+        flights: function flights() {
             return this.$store.state.flights;
         }
     },
     methods: {
-        toggle(flight) {
-            let index = this.openFlights.indexOf(flight.id);
+        toggle: function toggle(flight) {
+            var index = this.openFlights.indexOf(flight.id);
             if (index < 0) this.openFlights.push(flight.id);else this.openFlights.splice(index, 1);
         },
-        addFlight(flight) {
-            let url = '/api/flights';
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post(url, flight).then(response => {
-                this.$store.dispatch('fetch_flights');
+        addFlight: function addFlight(flight) {
+            var _this = this;
+
+            var url = '/api/flights';
+            _axios2.default.post(url, flight).then(function (response) {
+                _this.$store.dispatch('fetch_flights');
             });
             this.addFlightModal = false;
         },
-        isOpen(flight) {
-            return this.openFlights.some(id => id == flight.id);
+        isOpen: function isOpen(flight) {
+            return this.openFlights.some(function (id) {
+                return id == flight.id;
+            });
         },
-        getAirportById(id) {
-            return this.$store.state.airports.find(a => a.id == id);
+        getAirportById: function getAirportById(id) {
+            return this.$store.state.airports.find(function (a) {
+                return a.id == id;
+            });
         },
-        getAirportDepartureCode(flight) {
+        getAirportDepartureCode: function getAirportDepartureCode(flight) {
             return this.getAirportById(flight.departure_airport_id).code;
         },
-        getAirportArrivalCode(flight) {
+        getAirportArrivalCode: function getAirportArrivalCode(flight) {
             return this.getAirportById(flight.arrival_airport_id).code;
         },
-        getPilot(flight) {
-            return this.$store.state.pilots.find(p => p.id == flight.pilot_id);
+        getPilot: function getPilot(flight) {
+            return this.$store.state.pilots.find(function (p) {
+                return p.id == flight.pilot_id;
+            });
         },
-        getPilotExperience(flight) {
-            let pilot = this.getPilot(flight);
-            let date = new Date(pilot.starting_date);
+        getPilotExperience: function getPilotExperience(flight) {
+            var pilot = this.getPilot(flight);
+            var date = new Date(pilot.starting_date);
             return new Date().getFullYear() - date.getFullYear();
         },
-        getAirplane(flight) {
-            return this.$store.state.airplanes.find(a => a.id == flight.airplane_id);
+        getAirplane: function getAirplane(flight) {
+            return this.$store.state.airplanes.find(function (a) {
+                return a.id == flight.airplane_id;
+            });
         },
-        getAirplaneAge(flight) {
-            let airplane = this.getAirplane(flight);
-            let date = new Date(airplane.builddate);
+        getAirplaneAge: function getAirplaneAge(flight) {
+            var airplane = this.getAirplane(flight);
+            var date = new Date(airplane.builddate);
             return new Date().getFullYear() - date.getFullYear();
         },
-        onEditStart(flight) {
-            let flightModel = {
+        onEditStart: function onEditStart(flight) {
+            var flightModel = {
                 id: flight.id,
                 pilot: this.getPilot(flight),
                 airplane: this.getAirplane(flight),
@@ -5682,9 +5805,11 @@ Promise.delay = ms => new Promise(function (resolve, reject) {
             };
             this.editFlightModalValue = flightModel;
         },
-        onEdit() {
+        onEdit: function onEdit() {
+            var _this2 = this;
+
             // TODO
-            let flight = {
+            var flight = {
                 pilot_id: this.editFlightModalValue.pilot.id,
                 airplane_id: this.editFlightModalValue.airplane.id,
                 departure_airport_id: this.editFlightModalValue.departureAirport.id,
@@ -5692,26 +5817,40 @@ Promise.delay = ms => new Promise(function (resolve, reject) {
                 departure_time: this.editFlightModalValue.departure_time,
                 arrival_time: this.editFlightModalValue.arrival_time
             };
-            let id = this.editFlightModalValue.id;
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.put('/api/flights/' + id, flight).then(() => this.$store.dispatch('fetch_flights')).then(() => this.editFlightModalValue = null);
+            var id = this.editFlightModalValue.id;
+            _axios2.default.put('/api/flights/' + id, flight).then(function () {
+                return _this2.$store.dispatch('fetch_flights');
+            }).then(function () {
+                return _this2.editFlightModalValue = null;
+            });
         },
-        onDelete(flight) {
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.delete('/api/flights/' + flight.id).then(() => this.toggle(flight)).then(() => Promise.delay(800)).then(() => this.$store.dispatch('fetch_flights'));
+        onDelete: function onDelete(flight) {
+            var _this3 = this;
+
+            _axios2.default.delete('/api/flights/' + flight.id).then(function () {
+                return _this3.toggle(flight);
+            }).then(function () {
+                return Promise.delay(800);
+            }).then(function () {
+                return _this3.$store.dispatch('fetch_flights');
+            });
         }
     }
-});
+};
 
 /***/ }),
-/* 71 */
+/* 73 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_add_flight_modal_vue__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2436dcf6_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_add_flight_modal_vue__ = __webpack_require__(75);
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_add_flight_modal_vue__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_add_flight_modal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_add_flight_modal_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2436dcf6_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_add_flight_modal_vue__ = __webpack_require__(77);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(72)
+  __webpack_require__(74)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -5725,7 +5864,7 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_add_flight_modal_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_add_flight_modal_vue___default.a,
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2436dcf6_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_add_flight_modal_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
@@ -5751,17 +5890,17 @@ if (false) {(function () {
   })
 })()}
 
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ }),
-/* 72 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(73);
+var content = __webpack_require__(75);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -5781,7 +5920,7 @@ if(false) {
 }
 
 /***/ }),
-/* 73 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -5795,10 +5934,15 @@ exports.push([module.i, "\n.flight-modal.modal-card {\n}\r\n", ""]);
 
 
 /***/ }),
-/* 74 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 //
 //
 //
@@ -5899,12 +6043,12 @@ exports.push([module.i, "\n.flight-modal.modal-card {\n}\r\n", ""]);
 //
 //
 
-/* harmony default export */ __webpack_exports__["a"] = ({
+exports.default = {
   methods: {
-    cancel() {
+    cancel: function cancel() {
       this.$emit("cancel");
     },
-    ok() {
+    ok: function ok() {
       this.$validator.validateAll();
 
       if (this.$validator.errors.any()) return false;
@@ -5920,14 +6064,15 @@ exports.push([module.i, "\n.flight-modal.modal-card {\n}\r\n", ""]);
       });
     }
   },
-  mounted() {
+  mounted: function mounted() {
     if (this.$store.state.pilots.length == 0) this.$store.dispatch("fetch_pilots");
 
     if (this.$store.state.airplanes.length == 0) this.$store.dispatch("fetch_airplanes");
 
     if (this.$store.state.airports.length == 0) this.$store.dispatch("fetch_airports");
   },
-  data: function () {
+
+  data: function data() {
     return {
       pilot: "",
       airplane: "",
@@ -5938,45 +6083,53 @@ exports.push([module.i, "\n.flight-modal.modal-card {\n}\r\n", ""]);
     };
   },
   computed: {
-    pilots() {
-      return this.$store.state.pilots.map(p => {
+    pilots: function pilots() {
+      return this.$store.state.pilots.map(function (p) {
         return {
           id: p.id,
           name: p.firstname + " " + p.lastname
         };
       });
     },
-    airplanes() {
-      return this.$store.state.airplanes.map(a => {
+    airplanes: function airplanes() {
+      return this.$store.state.airplanes.map(function (a) {
         return {
           id: a.id,
           name: a.modelname
         };
       });
     },
-    airports() {
-      return this.$store.state.airports.map(a => {
+    airports: function airports() {
+      return this.$store.state.airports.map(function (a) {
         return {
           id: a.id,
           name: a.code
         };
       });
     },
-    departureAirports() {
+    departureAirports: function departureAirports() {
+      var _this = this;
+
       if (!this.arrivalAirport) return this.airports;
 
-      return this.airports.filter(a => a.id != this.arrivalAirport.id);
+      return this.airports.filter(function (a) {
+        return a.id != _this.arrivalAirport.id;
+      });
     },
-    arrivalAirports() {
+    arrivalAirports: function arrivalAirports() {
+      var _this2 = this;
+
       if (!this.departureAirport) return this.airports;
 
-      return this.airports.filter(a => a.id != this.departureAirport.id);
+      return this.airports.filter(function (a) {
+        return a.id != _this2.departureAirport.id;
+      });
     }
   }
-});
+};
 
 /***/ }),
-/* 75 */
+/* 77 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6407,7 +6560,678 @@ if (false) {
 }
 
 /***/ }),
-/* 76 */
+/* 78 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_edit_flight_modal_vue__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_edit_flight_modal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_edit_flight_modal_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7b775ba9_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_edit_flight_modal_vue__ = __webpack_require__(82);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(79)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+/* template */
+
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_edit_flight_modal_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7b775ba9_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_edit_flight_modal_vue__["a" /* default */],
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\flights\\edit-flight-modal.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] edit-flight-modal.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7b775ba9", Component.options)
+  } else {
+    hotAPI.reload("data-v-7b775ba9", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(80);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("708aa0d4", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7b775ba9\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./edit-flight-modal.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7b775ba9\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./edit-flight-modal.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.flight-modal.modal-card {\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  props: ['actionName', 'flight'],
+  methods: {
+    cancel: function cancel() {
+      this.$emit("cancel");
+    },
+    onEdit: function onEdit() {
+      this.$emit('edit');
+    }
+  },
+  mounted: function mounted() {
+    if (this.$store.state.pilots.length == 0) this.$store.dispatch("fetch_pilots");
+
+    if (this.$store.state.airplanes.length == 0) this.$store.dispatch("fetch_airplanes");
+
+    if (this.$store.state.airports.length == 0) this.$store.dispatch("fetch_airports");
+  },
+
+  computed: {
+    pilots: function pilots() {
+      return this.$store.state.pilots;
+    },
+    airplanes: function airplanes() {
+      return this.$store.state.airplanes;
+    },
+    airports: function airports() {
+      return this.$store.state.airports;
+    },
+    departureAirports: function departureAirports() {
+      var _this = this;
+
+      return this.airports.filter(function (a) {
+        return a.id != _this.flight.arrivalAirport.id;
+      });
+    },
+    arrivalAirports: function arrivalAirports() {
+      var _this2 = this;
+
+      return this.airports.filter(function (a) {
+        return a.id != _this2.flight.departureAirport.id;
+      });
+    }
+  }
+};
+
+/***/ }),
+/* 82 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "modal is-active" }, [
+    _c("div", {
+      staticClass: "modal-background",
+      on: {
+        click: function($event) {
+          _vm.cancel()
+        }
+      }
+    }),
+    _vm._v(" "),
+    _c("div", { staticClass: "modal-card flight-modal" }, [
+      _c("header", { staticClass: "modal-card-head has-text-centered" }, [
+        _c("p", { staticClass: "modal-card-title" }, [_vm._v("Edit Flight")]),
+        _vm._v(" "),
+        _c("button", {
+          staticClass: "delete",
+          attrs: { "aria-label": "close" },
+          on: {
+            click: function($event) {
+              _vm.cancel()
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "modal-card-body" }, [
+        _c("form", { staticClass: "form" }, [
+          _c("div", { staticClass: "field is-horizontal" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "field-body" }, [
+              _c("div", { staticClass: "field" }, [
+                _c("div", { staticClass: "control" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.flight.pilot,
+                            expression: "flight.pilot"
+                          },
+                          {
+                            name: "validate",
+                            rawName: "v-validate",
+                            value: { required: true },
+                            expression: "{required: true}"
+                          }
+                        ],
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.flight.pilot = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          }
+                        }
+                      },
+                      [
+                        _c("option", { attrs: { value: "" } }, [
+                          _vm._v("Select Pilot")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.pilots, function(pilot) {
+                          return _c(
+                            "option",
+                            { key: pilot.id, domProps: { value: pilot } },
+                            [
+                              _vm._v(
+                                _vm._s(pilot.firstname + " " + pilot.lastname)
+                              )
+                            ]
+                          )
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "field is-horizontal" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "field-body" }, [
+              _c("div", { staticClass: "field" }, [
+                _c("div", { staticClass: "control" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.flight.airplane,
+                            expression: "flight.airplane"
+                          },
+                          {
+                            name: "validate",
+                            rawName: "v-validate",
+                            value: { required: true },
+                            expression: "{required: true}"
+                          }
+                        ],
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.flight.airplane = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          }
+                        }
+                      },
+                      [
+                        _c("option", { attrs: { value: "" } }, [
+                          _vm._v("Select Airplane")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.airplanes, function(airplane) {
+                          return _c(
+                            "option",
+                            { key: airplane.id, domProps: { value: airplane } },
+                            [_vm._v(_vm._s(airplane.modelname))]
+                          )
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "field is-horizontal" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c("div", { staticClass: "field-body" }, [
+              _c("div", { staticClass: "field" }, [
+                _c("div", { staticClass: "control" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.flight.departureAirport,
+                            expression: "flight.departureAirport"
+                          },
+                          {
+                            name: "validate",
+                            rawName: "v-validate",
+                            value: { required: true },
+                            expression: "{required: true}"
+                          }
+                        ],
+                        attrs: { required: true },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.flight.departureAirport = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          }
+                        }
+                      },
+                      _vm._l(_vm.departureAirports, function(airport) {
+                        return _c(
+                          "option",
+                          { key: airport.id, domProps: { value: airport } },
+                          [_vm._v(_vm._s(airport.code))]
+                        )
+                      })
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "field" }, [
+                _c("div", { staticClass: "control" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: { required: true },
+                        expression: "{required: true}"
+                      },
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.flight.departure_time,
+                        expression: "flight.departure_time"
+                      }
+                    ],
+                    staticClass: "input",
+                    attrs: {
+                      type: "datetime-local",
+                      name: "departure-time",
+                      id: ""
+                    },
+                    domProps: { value: _vm.flight.departure_time },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.flight.departure_time = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "field is-horizontal" }, [
+            _vm._m(3),
+            _vm._v(" "),
+            _c("div", { staticClass: "field-body" }, [
+              _c("div", { staticClass: "field" }, [
+                _c("div", { staticClass: "control" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.flight.arrivalAirport,
+                            expression: "flight.arrivalAirport"
+                          },
+                          {
+                            name: "validate",
+                            rawName: "v-validate",
+                            value: { required: true },
+                            expression: "{required: true}"
+                          }
+                        ],
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.flight.arrivalAirport = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          }
+                        }
+                      },
+                      _vm._l(_vm.arrivalAirports, function(airport) {
+                        return _c(
+                          "option",
+                          { key: airport.id, domProps: { value: airport } },
+                          [_vm._v(_vm._s(airport.code))]
+                        )
+                      })
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "field" }, [
+                _c("div", { staticClass: "control" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.flight.arrival_time,
+                        expression: "flight.arrival_time"
+                      },
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: { required: true },
+                        expression: "{required: true}"
+                      }
+                    ],
+                    staticClass: "input",
+                    attrs: { type: "datetime-local", name: "arrival-time" },
+                    domProps: { value: _vm.flight.arrival_time },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.flight.arrival_time = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _vm.$validator.errors.any()
+            ? _c("p", { staticClass: "help is-danger is-large" }, [
+                _vm._v("Please, select all fields")
+              ])
+            : _vm._e()
+        ])
+      ]),
+      _vm._v(" "),
+      _c("footer", { staticClass: "modal-card-foot" }, [
+        _c(
+          "button",
+          {
+            staticClass: "button is-success",
+            attrs: { disabled: _vm.$validator.errors.any() },
+            on: {
+              click: function($event) {
+                _vm.onEdit()
+              }
+            }
+          },
+          [_vm._v("Edit")]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "button",
+            on: {
+              click: function($event) {
+                _vm.cancel()
+              }
+            }
+          },
+          [_vm._v("Cancel")]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field-label is-normal" }, [
+      _c("label", { staticClass: "label" }, [_vm._v("Pilot")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field-label is-normal" }, [
+      _c("label", { staticClass: "label" }, [_vm._v("Airplane")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field-label is-normal" }, [
+      _c("label", { staticClass: "label" }, [_vm._v("Departure")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field-label is-normal" }, [
+      _c("label", { staticClass: "label" }, [_vm._v("Arrival")])
+    ])
+  }
+]
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-7b775ba9", esExports)
+  }
+}
+
+/***/ }),
+/* 83 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6640,7 +7464,7 @@ if (false) {
 }
 
 /***/ }),
-/* 77 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6724,13 +7548,14 @@ var store = new _vuex2.default.Store({
 exports.default = store;
 
 /***/ }),
-/* 78 */
+/* 85 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_page_title_vue__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_89c7c874_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_page_title_vue__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_page_title_vue__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_page_title_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_page_title_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_89c7c874_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_page_title_vue__ = __webpack_require__(87);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -6744,7 +7569,7 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_page_title_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_page_title_vue___default.a,
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_89c7c874_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_page_title_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
@@ -6774,10 +7599,15 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 79 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 //
 //
 //
@@ -6791,10 +7621,10 @@ if (false) {(function () {
 //
 //
 
-/* harmony default export */ __webpack_exports__["a"] = ({});
+exports.default = {};
 
 /***/ }),
-/* 80 */
+/* 87 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6822,13 +7652,14 @@ if (false) {
 }
 
 /***/ }),
-/* 81 */
+/* 88 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_nav_menu_vue__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6177c916_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_nav_menu_vue__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_nav_menu_vue__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_nav_menu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_nav_menu_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6177c916_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_nav_menu_vue__ = __webpack_require__(90);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -6842,7 +7673,7 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_nav_menu_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_nav_menu_vue___default.a,
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6177c916_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_nav_menu_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
@@ -6872,10 +7703,15 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 82 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 89 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 //
 //
 //
@@ -6896,10 +7732,10 @@ if (false) {(function () {
 //
 //
 
-/* harmony default export */ __webpack_exports__["a"] = ({});
+exports.default = {};
 
 /***/ }),
-/* 83 */
+/* 90 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6955,7 +7791,7 @@ if (false) {
 }
 
 /***/ }),
-/* 84 */
+/* 91 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9469,13 +10305,13 @@ if (inBrowser && window.Vue) {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
-/* 85 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(86);
+var content = __webpack_require__(93);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -9483,7 +10319,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(87)(content, options);
+var update = __webpack_require__(94)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -9500,7 +10336,7 @@ if(false) {
 }
 
 /***/ }),
-/* 86 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -9514,7 +10350,7 @@ exports.push([module.i, ".table td {\r\n    vertical-align: middle;\r\n}\r\na {\
 
 
 /***/ }),
-/* 87 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -9570,7 +10406,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(88);
+var	fixUrls = __webpack_require__(95);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -9886,7 +10722,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 88 */
+/* 95 */
 /***/ (function(module, exports) {
 
 
@@ -9981,76 +10817,23 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 89 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_edit_flight_modal_vue__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7b775ba9_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_edit_flight_modal_vue__ = __webpack_require__(93);
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(90)
-}
-var normalizeComponent = __webpack_require__(0)
-/* script */
-
-/* template */
-
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_edit_flight_modal_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7b775ba9_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_edit_flight_modal_vue__["a" /* default */],
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "src\\flights\\edit-flight-modal.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] edit-flight-modal.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7b775ba9", Component.options)
-  } else {
-    hotAPI.reload("data-v-7b775ba9", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
-
-
-/***/ }),
-/* 90 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(91);
+var content = __webpack_require__(97);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("708aa0d4", content, false);
+var update = __webpack_require__(3)("1982647c", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7b775ba9\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./edit-flight-modal.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7b775ba9\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./edit-flight-modal.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-35e3391c\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./airports-table.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-35e3391c\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./airports-table.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -10060,7 +10843,7 @@ if(false) {
 }
 
 /***/ }),
-/* 91 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -10068,153 +10851,13 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\n.flight-modal.modal-card {\n}\r\n", ""]);
+exports.push([module.i, "\n.airports-table-wrapper th:first-of-type {\r\n    min-width: 100px;\n} \r\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 92 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  props: ['actionName', 'flight'],
-  methods: {
-    cancel() {
-      this.$emit("cancel");
-    },
-    onEdit() {
-      this.$emit('edit');
-    }
-  },
-  mounted() {
-    if (this.$store.state.pilots.length == 0) this.$store.dispatch("fetch_pilots");
-
-    if (this.$store.state.airplanes.length == 0) this.$store.dispatch("fetch_airplanes");
-
-    if (this.$store.state.airports.length == 0) this.$store.dispatch("fetch_airports");
-  },
-  computed: {
-    pilots() {
-      return this.$store.state.pilots;
-    },
-    airplanes() {
-      return this.$store.state.airplanes;
-    },
-    airports() {
-      return this.$store.state.airports;
-    },
-    departureAirports() {
-      return this.airports.filter(a => a.id != this.flight.arrivalAirport.id);
-    },
-    arrivalAirports() {
-      return this.airports.filter(a => a.id != this.flight.departureAirport.id);
-    }
-  }
-});
-
-/***/ }),
-/* 93 */
+/* 98 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10222,416 +10865,30 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "modal is-active" }, [
-    _c("div", {
-      staticClass: "modal-background",
-      on: {
-        click: function($event) {
-          _vm.cancel()
-        }
-      }
-    }),
-    _vm._v(" "),
-    _c("div", { staticClass: "modal-card flight-modal" }, [
-      _c("header", { staticClass: "modal-card-head has-text-centered" }, [
-        _c("p", { staticClass: "modal-card-title" }, [_vm._v("Edit Flight")]),
-        _vm._v(" "),
-        _c("button", {
-          staticClass: "delete",
-          attrs: { "aria-label": "close" },
-          on: {
-            click: function($event) {
-              _vm.cancel()
-            }
-          }
-        })
-      ]),
-      _vm._v(" "),
-      _c("section", { staticClass: "modal-card-body" }, [
-        _c("form", { staticClass: "form" }, [
-          _c("div", { staticClass: "field is-horizontal" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c("div", { staticClass: "field-body" }, [
-              _c("div", { staticClass: "field" }, [
-                _c("div", { staticClass: "control" }, [
-                  _c("div", { staticClass: "select" }, [
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.flight.pilot,
-                            expression: "flight.pilot"
-                          },
-                          {
-                            name: "validate",
-                            rawName: "v-validate",
-                            value: { required: true },
-                            expression: "{required: true}"
-                          }
-                        ],
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.flight.pilot = $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          }
-                        }
-                      },
-                      [
-                        _c("option", { attrs: { value: "" } }, [
-                          _vm._v("Select Pilot")
-                        ]),
-                        _vm._v(" "),
-                        _vm._l(_vm.pilots, function(pilot) {
-                          return _c(
-                            "option",
-                            { key: pilot.id, domProps: { value: pilot } },
-                            [
-                              _vm._v(
-                                _vm._s(pilot.firstname + " " + pilot.lastname)
-                              )
-                            ]
-                          )
-                        })
-                      ],
-                      2
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field is-horizontal" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c("div", { staticClass: "field-body" }, [
-              _c("div", { staticClass: "field" }, [
-                _c("div", { staticClass: "control" }, [
-                  _c("div", { staticClass: "select" }, [
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.flight.airplane,
-                            expression: "flight.airplane"
-                          },
-                          {
-                            name: "validate",
-                            rawName: "v-validate",
-                            value: { required: true },
-                            expression: "{required: true}"
-                          }
-                        ],
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.flight.airplane = $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          }
-                        }
-                      },
-                      [
-                        _c("option", { attrs: { value: "" } }, [
-                          _vm._v("Select Airplane")
-                        ]),
-                        _vm._v(" "),
-                        _vm._l(_vm.airplanes, function(airplane) {
-                          return _c(
-                            "option",
-                            { key: airplane.id, domProps: { value: airplane } },
-                            [_vm._v(_vm._s(airplane.modelname))]
-                          )
-                        })
-                      ],
-                      2
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field is-horizontal" }, [
-            _vm._m(2),
-            _vm._v(" "),
-            _c("div", { staticClass: "field-body" }, [
-              _c("div", { staticClass: "field" }, [
-                _c("div", { staticClass: "control" }, [
-                  _c("div", { staticClass: "select" }, [
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.flight.departureAirport,
-                            expression: "flight.departureAirport"
-                          },
-                          {
-                            name: "validate",
-                            rawName: "v-validate",
-                            value: { required: true },
-                            expression: "{required: true}"
-                          }
-                        ],
-                        attrs: { required: true },
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.flight.departureAirport = $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          }
-                        }
-                      },
-                      _vm._l(_vm.departureAirports, function(airport) {
-                        return _c(
-                          "option",
-                          { key: airport.id, domProps: { value: airport } },
-                          [_vm._v(_vm._s(airport.code))]
-                        )
-                      })
-                    )
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "field" }, [
-                _c("div", { staticClass: "control" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "validate",
-                        rawName: "v-validate",
-                        value: { required: true },
-                        expression: "{required: true}"
-                      },
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.flight.departure_time,
-                        expression: "flight.departure_time"
-                      }
-                    ],
-                    staticClass: "input",
-                    attrs: {
-                      type: "datetime-local",
-                      name: "departure-time",
-                      id: ""
-                    },
-                    domProps: { value: _vm.flight.departure_time },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.flight.departure_time = $event.target.value
-                      }
-                    }
-                  })
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field is-horizontal" }, [
-            _vm._m(3),
-            _vm._v(" "),
-            _c("div", { staticClass: "field-body" }, [
-              _c("div", { staticClass: "field" }, [
-                _c("div", { staticClass: "control" }, [
-                  _c("div", { staticClass: "select" }, [
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.flight.arrivalAirport,
-                            expression: "flight.arrivalAirport"
-                          },
-                          {
-                            name: "validate",
-                            rawName: "v-validate",
-                            value: { required: true },
-                            expression: "{required: true}"
-                          }
-                        ],
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.flight.arrivalAirport = $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          }
-                        }
-                      },
-                      _vm._l(_vm.arrivalAirports, function(airport) {
-                        return _c(
-                          "option",
-                          { key: airport.id, domProps: { value: airport } },
-                          [_vm._v(_vm._s(airport.code))]
-                        )
-                      })
-                    )
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "field" }, [
-                _c("div", { staticClass: "control" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.flight.arrival_time,
-                        expression: "flight.arrival_time"
-                      },
-                      {
-                        name: "validate",
-                        rawName: "v-validate",
-                        value: { required: true },
-                        expression: "{required: true}"
-                      }
-                    ],
-                    staticClass: "input",
-                    attrs: { type: "datetime-local", name: "arrival-time" },
-                    domProps: { value: _vm.flight.arrival_time },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.flight.arrival_time = $event.target.value
-                      }
-                    }
-                  })
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _vm.$validator.errors.any()
-            ? _c("p", { staticClass: "help is-danger is-large" }, [
-                _vm._v("Please, select all fields")
-              ])
-            : _vm._e()
-        ])
-      ]),
-      _vm._v(" "),
-      _c("footer", { staticClass: "modal-card-foot" }, [
-        _c(
-          "button",
-          {
-            staticClass: "button is-success",
-            attrs: { disabled: _vm.$validator.errors.any() },
-            on: {
-              click: function($event) {
-                _vm.onEdit()
-              }
-            }
-          },
-          [_vm._v("Edit")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "button",
-            on: {
-              click: function($event) {
-                _vm.cancel()
-              }
-            }
-          },
-          [_vm._v("Cancel")]
-        )
-      ])
-    ])
-  ])
+  return _c("table-template", {
+    staticClass: "airports-table-wrapper",
+    attrs: {
+      rows: _vm.airports,
+      columnDefs: _vm.columnDefs,
+      importUrl: "/api/airports/import",
+      exportUrl: "/api/airports/export"
+    },
+    on: {
+      import: function($event) {
+        _vm.onImport()
+      },
+      remove: _vm.remove
+    }
+  })
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "field-label is-normal" }, [
-      _c("label", { staticClass: "label" }, [_vm._v("Pilot")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "field-label is-normal" }, [
-      _c("label", { staticClass: "label" }, [_vm._v("Airplane")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "field-label is-normal" }, [
-      _c("label", { staticClass: "label" }, [_vm._v("Departure")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "field-label is-normal" }, [
-      _c("label", { staticClass: "label" }, [_vm._v("Arrival")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-7b775ba9", esExports)
+     require("vue-hot-reload-api").rerender("data-v-35e3391c", esExports)
   }
 }
 
