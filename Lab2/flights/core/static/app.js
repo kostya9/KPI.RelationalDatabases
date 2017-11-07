@@ -5278,7 +5278,10 @@ var render = function() {
                       }
                     ],
                     staticClass: "input",
-                    attrs: { type: "text", placeholder: "Name" },
+                    attrs: {
+                      type: "text",
+                      placeholder: "Name doesn't contain"
+                    },
                     domProps: { value: _vm.name },
                     on: {
                       input: function($event) {

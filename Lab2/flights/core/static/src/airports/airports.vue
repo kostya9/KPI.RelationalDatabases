@@ -4,7 +4,7 @@
         <nav class="level is-centered controls" v-on:keyup.13="search()">
             <div class="level-left">
                 <level-control>
-                    <input class="input" type="text" placeholder="Name" v-model="name">
+                    <input class="input" type="text" placeholder="Name doesn't contain" v-model="name">
                 </level-control>
                 <level-control>
                     <input class="input" type="text" placeholder="Code" v-model="code">

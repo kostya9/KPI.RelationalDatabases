@@ -41,7 +41,7 @@ class Airports:
             query += """ AND MATCH (Name)
         AGAINST (%s IN BOOLEAN MODE)
             """
-            params += (name,)
+            params += ('-' + name,)
         self.cursor.execute(query, params)
 
         return self.__get_result()
