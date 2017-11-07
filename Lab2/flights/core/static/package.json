@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "webpack --progress --colors --watch",
+    "build:production": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
