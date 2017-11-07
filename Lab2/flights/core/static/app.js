@@ -5696,7 +5696,7 @@ Promise.delay = ms => new Promise(function (resolve, reject) {
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.put('/api/flights/' + id, flight).then(() => this.$store.dispatch('fetch_flights')).then(() => this.editFlightModalValue = null);
         },
         onDelete(flight) {
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.delete('/api/flights/' + flight.id).then(() => this.toggle(flight)).then(() => Promise.delay(500)).then(() => this.$store.dispatch('fetch_flights'));
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.delete('/api/flights/' + flight.id).then(() => this.toggle(flight)).then(() => Promise.delay(800)).then(() => this.$store.dispatch('fetch_flights'));
         }
     }
 });

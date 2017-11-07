@@ -158,7 +158,7 @@ export default {
         onDelete(flight) {
             axios.delete('/api/flights/' + flight.id)
                 .then(() => this.toggle(flight))
-                .then(() => Promise.delay(500))
+                .then(() => Promise.delay(800))
                 .then(() => this.$store.dispatch('fetch_flights'))
         }
     }
