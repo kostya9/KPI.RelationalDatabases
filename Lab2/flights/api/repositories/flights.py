@@ -50,3 +50,9 @@ class Flights:
         """
         params = (flight.pilot_id, flight.airplane_id, flight.departure_airport_id, flight.arrival_airport_id, flight.departure_time, flight.arrival_time, id)
         self.cursor.execute(query, params)
+
+    def remove(self, id):
+        query = """
+        DELETE FROM flights WHERE Id=%s
+        """
+        self.cursor.execute(query, [id])

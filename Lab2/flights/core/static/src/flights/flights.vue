@@ -40,23 +40,31 @@
                 </div>
             </div>
             <footer class="card-footer">
-                <a href="#" class="card-footer-item">Edit</a>
-                <a href="#" class="card-footer-item">Delete</a>
+                <a class="card-footer-item" @click="onEditStart(flight)">Edit</a>
+                <a class="card-footer-item" @click="onDelete(flight)">Delete</a>
             </footer>
         </div>
     </transition>
     </div>
 </div>
 <add-flight-modal v-if="addFlightModal" @ok="addFlight" @cancel="addFlightModal = false"></add-flight-modal>
+<edit-flight-modal v-if="editFlightModalValue !== null" :flight="editFlightModalValue" @edit="onEdit()" @cancel="editFlightModalValue = null"></edit-flight-modal>
 </div>
 </template>
 <script>
+Promise.delay = (ms) => new Promise(function(resolve, reject) {
+                    setTimeout(function() {
+                        resolve();
+                    }, ms)
+});
 import AddFlightModal  from './add-flight-modal.vue';
+import EditFlightModal from './edit-flight-modal.vue'
 import axios from 'axios';
 export default {
-    components: {AddFlightModal},
+    components: {AddFlightModal, EditFlightModal},
     data: function() {
         return {
+            editFlightModalValue: null,
             addFlightModal: false,
             openFlights: []
         }
@@ -119,6 +127,39 @@ export default {
             let airplane = this.getAirplane(flight)
             let date = new Date(airplane.builddate)
             return new Date().getFullYear() - date.getFullYear()
+        },
+        onEditStart(flight) {
+            let flightModel = {
+                id: flight.id,
+                pilot: this.getPilot(flight),
+                airplane: this.getAirplane(flight),
+                departureAirport: this.getAirportById(flight.departure_airport_id),
+                arrivalAirport: this.getAirportById(flight.arrival_airport_id),
+                departure_time: flight.departure_time,
+                arrival_time: flight.arrival_time
+            }
+            this.editFlightModalValue = flightModel;
+        },
+        onEdit() {
+            // TODO
+            let flight = {
+                pilot_id: this.editFlightModalValue.pilot.id,
+                airplane_id: this.editFlightModalValue.airplane.id,
+                departure_airport_id: this.editFlightModalValue.departureAirport.id,
+                arrival_airport_id: this.editFlightModalValue.arrivalAirport.id,
+                departure_time: this.editFlightModalValue.departure_time, 
+                arrival_time: this.editFlightModalValue.arrival_time
+            }
+            let id = this.editFlightModalValue.id;
+            axios.put('/api/flights/' + id, flight)
+                .then(() => this.$store.dispatch('fetch_flights'))
+                .then(() => this.editFlightModalValue = null);
+        },
+        onDelete(flight) {
+            axios.delete('/api/flights/' + flight.id)
+                .then(() => this.toggle(flight))
+                .then(() => Promise.delay(500))
+                .then(() => this.$store.dispatch('fetch_flights'))
         }
     }
 }

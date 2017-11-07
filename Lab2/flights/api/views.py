@@ -225,6 +225,7 @@ def flights(request: HttpRequest):
             repository.add(flight)
         return HttpResponse(status=200)
 
+@method_decorator(csrf_exempt, name='dispatch')
 def flights_update(request: HttpRequest, id):
     if request.method == 'PUT':
         try:
@@ -235,4 +236,9 @@ def flights_update(request: HttpRequest, id):
         with connect() as connection:
             repository = Flights(connection)
             repository.update(id, flight)
+        return HttpResponse(status=200)
+    if request.method == 'DELETE':
+        with connect() as connection:
+            repository = Flights(connection)
+            repository.remove(id)
         return HttpResponse(status=200)

@@ -10,7 +10,12 @@
                     <input class="input" type="text" placeholder="Code" v-model="code">
                 </level-control>
                 <level-control>
-                    <input class="input" type="text" placeholder="City" v-model="city">
+                                <div class="select">
+                        <select v-model="city" v-validate="{required: true}">
+                          <option value="">Select City</option>
+                          <option v-for="city in cities" :key="city" :value="city">{{city}}</option>
+                      </select>
+                            </div>
                 </level-control>
             </div>
             <div class="level-right">
@@ -79,6 +84,10 @@ import axios from 'axios';
         computed: {
             airports() {
                 return this.queryAirports || this.$store.state.airports;
+            },
+            cities() {
+                let allCities = this.$store.state.airports.map(a => a.city);
+                return Array.from(new Set(allCities))
             }
         }
     }

@@ -33,9 +33,15 @@ class Airports:
     def search(self, name, code, city):
         query = """
         SELECT Id, Name, Code, City FROM airports
-        WHERE Name LIKE %s AND Code LIKE %s AND City LIKE %s
+        WHERE Code LIKE %s AND City LIKE %s
         """
-        params = (name + '%', code + '%', city + '%')
+
+        params = (code + '%', city + '%')
+        if name is not None and name is not "":
+            query += """ AND MATCH (Name)
+        AGAINST (%s IN BOOLEAN MODE)
+            """
+            params += (name,)
         self.cursor.execute(query, params)
 
         return self.__get_result()

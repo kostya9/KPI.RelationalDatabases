@@ -3,7 +3,7 @@
 <div class="wrapper">
         <div class="table-wrapper">
         <div class="table-top-buttons">
-            <button class="button is-info" href="importUrl">
+            <button class="button is-info import-button" href="importUrl">
                 <span>Import</span>
                 <input type="file" @change="fileChange($event)">
             </button>
@@ -87,6 +87,9 @@ input[type=file] {
         margin: 10px 0;
         display: flex;
         justify-content: space-between;
+    }
+    .import-button {
+        overflow: hidden;
     }
 </style>
 
