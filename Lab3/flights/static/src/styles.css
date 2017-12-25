@@ -1,0 +1,38 @@
+.table td {
+    vertical-align: middle;
+}
+a {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+.controls {
+    width: 1000px;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: lightblue;
+}
+
+.controls .input {
+    margin-right: 10px;
+}
+
+.button {
+    min-width: 100px;
+}
+
+
+.ids.container {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.level {
+    width: 100%;
+}

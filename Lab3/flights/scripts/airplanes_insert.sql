@@ -1,0 +1,1 @@
+INSERT INTO Airplanes (ModelName, BuildDate) VALUES ('BigPlane228', CURDATE())
