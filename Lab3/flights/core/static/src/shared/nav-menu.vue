@@ -13,6 +13,9 @@
             <router-link tag="li" to="/flights" active-class="is-active">
                 <a>Flights</a>
             </router-link>
+            <router-link tag="li" to="/manage" active-class="is-active">
+                <a>Manage</a>
+            </router-link>
         </ul>
     </div>
 </template>

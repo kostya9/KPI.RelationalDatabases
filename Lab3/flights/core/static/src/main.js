@@ -2,6 +2,7 @@ import Pilots from './pilots/pilots.vue';
 import Airplanes from './airplanes/airplanes.vue';
 import Airports from './airports/airports.vue';
 import Flights from './flights/flights.vue';
+import ManagePage from './manage/manage-page.vue';
 
 import store from './store'
 import Vuex from 'vuex';
@@ -11,12 +12,16 @@ import NavMenu from './shared/nav-menu.vue';
 import VueRouter from 'vue-router';
 import css from './styles.css';
 
+import 'bulma-extensions/bulma-switch/bulma-switch.css';
+import 'bulma-extensions/bulma-divider/bulma-divider.css';
+
 const routes = [
     {path: '/', redirect: '/pilots'},
     {path: '/pilots', component: Pilots, name: 'Pilots'},
     {path: '/airplanes', component: Airplanes, name: 'Airplanes'},
     {path: '/airports', component: Airports, name: 'Airports'},
     {path: '/flights', component: Flights, name: 'Flights'},
+    {path: '/manage', component: ManagePage, name: 'Manage'}
 ]
 
 const router = new VueRouter({

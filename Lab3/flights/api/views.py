@@ -5,9 +5,11 @@ from django.http import HttpResponse, HttpRequest, JsonResponse
 
 from wsgiref.util import FileWrapper
 from io import StringIO
-
+from django.db import connection
 from api.models import Encoder, Pilot, Flight, Airplane, Airport
 import json
+
+from MySQLdb.cursors import Cursor
 
 import simplexml
 
@@ -42,7 +44,7 @@ def pilots_search(request: HttpRequest):
     if request.method == 'GET':
         firstname = request.GET.get('firstname')
         lastname = request.GET.get('lastname')
-        pilots = list(Pilots.objects.filter(firstname__icontains=firstname, lastname__icontains=lastname).values())
+        pilots = list(Pilot.objects.filter(firstname__icontains=firstname, lastname__icontains=lastname).values())
         return JsonResponse(pilots, safe=False, encoder=Encoder)
 
 def pilots_export(request: HttpRequest):
@@ -200,4 +202,88 @@ def flights_update(request: HttpRequest, id):
     if request.method == 'DELETE':
         flight = Flight.objects.get(id=id)
         flight.delete()
+        return HttpResponse(status=200)
+
+@method_decorator(csrf_exempt, name='dispatch')
+def trigger(request: HttpRequest):
+    if request.method == 'GET':
+        query = """
+        SELECT EXISTS(select 1
+        from information_schema.triggers
+        WHERE trigger_name='verify_date') as trigger_exists;
+        """
+        with connection.cursor() as cursor:
+            cursor.execute(query)
+            trigger = cursor.fetchone()[0]
+        return JsonResponse(trigger, safe=False, encoder=Encoder)
+    elif request.method == 'POST':
+        body = request.body.decode('utf-8')
+        trigger = json.loads(body)
+        if not trigger:
+            with connection.cursor() as cursor:
+                query = """
+                DROP TRIGGER verify_date;
+                """
+                cursor.execute(query)
+        else:
+            with connection.cursor() as cursor:
+                query = """
+                    CREATE TRIGGER verify_date
+                    BEFORE INSERT ON api_flight 
+                    FOR EACH ROW
+                    BEGIN
+                        CALL validate_flight_datetime(NEW.arrival_time, @valid);
+                        IF NOT (@valid)
+                        THEN SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Incorrect arrival time';
+                        END IF;
+                        
+                        CALL validate_flight_datetime(NEW.departure_time, @valid);
+                        IF NOT (@valid)
+                        THEN SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Incorrect departure time';
+                        END IF;
+                    END
+                """
+                cursor.execute(query)
+        return HttpResponse(status=200)
+
+@method_decorator(csrf_exempt, name='dispatch')
+def event(request: HttpRequest):
+    remove_query =  """
+        SELECT STARTS FROM information_schema.EVENTS WHERE EVENT_NAME='remove_all';
+        """
+    if request.method == 'GET':
+        with connection.cursor() as cursor:
+            cursor.execute(remove_query)
+            if cursor.rowcount == 0:
+                result = {'enabled': False}
+            else:
+                startdate = cursor.fetchone()[0]
+                result = {'enabled': True, 'start_date': str(startdate)}
+        return JsonResponse(result, safe=False, encoder=Encoder)
+    elif request.method == 'POST':
+        body = request.body.decode('utf-8')
+        event = json.loads(body)
+        if event['enabled']:
+            query = """
+            CREATE EVENT remove_all
+            ON SCHEDULE
+            EVERY 1 WEEK
+            STARTS %s
+            DO
+            BEGIN
+                DELETE FROM api_flight;
+                DELETE FROM api_airport;
+                DELETE FROM api_airplane;
+                DELETE FROM api_pilot;
+            END
+            """
+            with connection.cursor() as cursor:
+                cursor.execute("DROP EVENT IF EXISTS remove_all;")
+                date = event['date']
+                cursor.execute(query, [date])
+        else:
+            query = "DROP EVENT remove_all;"
+            with connection.cursor() as cursor:
+                cursor.execute(query)
+
         return HttpResponse(status=200)

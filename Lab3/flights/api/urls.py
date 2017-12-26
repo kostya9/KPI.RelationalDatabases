@@ -27,6 +27,9 @@ urlpatterns = [
     url(r'^pilots/search', views.pilots_search, name='pilots_search'),
     url(r'^pilots/export', views.pilots_export, name='pilots_export'),
     url(r'^pilots/import', views.pilots_import, name='pilots_import'),
-    url(r'^pilots', views.pilots, name='pilots')
+    url(r'^pilots', views.pilots, name='pilots'),
+
+    url(r'^trigger', views.trigger, name='trigger'),
+    url(r'^event', views.event, name='event')
 
 ]
